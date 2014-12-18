@@ -30,9 +30,6 @@ As your first assignment, [create a new Issue in the class repo](https://github.
     * [ ] Check the box to create an initial `README.md` file
     * [ ] Select the `CC0` -- "Creative Commons" license for your work
     * [ ] Add a link to your `TIY-Assignments` repo as a comment to your WIP Issue
-* [ ] [Complete the "Forking Projects" Github guide](https://guides.github.com/activities/forking/)
-    * [ ] Find and fork the Prezto project on Github
-    * [ ] Add a link to your new fork as a comment to your WIP Issue
 * NOTE: The above looks like a lot, but those tasks go quickly. The following items require, and deserve, more time. Don't put them off!    
 * [ ] Read and complete the exercises for the [Command Line Crash Course](http://cli.learncodethehardway.org/book/). The command line is another name for the terminal. There are about 20 commands you'll use all the time on the command line, and it's helpful to have them memorized so we can use them right away.    
 * [ ] Read the book [Learn to Program](https://pine.fm/LearnToProgram/). That's a terrific tutorial if you've never written any code before, or if you've never worked with Ruby before. You can read the original version on the author's website for free, or follow the link he gives to purchase the latest version. For this assignment, the exercises in the book are optional.
