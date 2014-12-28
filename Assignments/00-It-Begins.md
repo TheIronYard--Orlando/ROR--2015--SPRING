@@ -9,9 +9,9 @@ As your first assignment, [create a new Issue in the class repo](https://github.
     * [X] A picture, so I can recognize your face.
     * [X] Your full name, so I can recognize your name.
     * [X] A valid public email address, so I can contact you if I need to.
-* [ ] Read the `README.md` files in:
-    * [ ] [Assignments](https://github.com/TheIronYard--Orlando/ROR--2015--SPRING/tree/master/Assignments)
-    * [ ] [Notes](https://github.com/TheIronYard--Orlando/ROR--2015--SPRING/tree/master/Notes)
+* [X] Read the `README.md` files in:
+    * [X] [Assignments](https://github.com/TheIronYard--Orlando/ROR--2015--SPRING/tree/master/Assignments)
+    * [X] [Notes](https://github.com/TheIronYard--Orlando/ROR--2015--SPRING/tree/master/Notes)
 * [ ] [Install Homebrew](http://brew.sh) on your Mac
     * [ ] Open `Terminal.app`
     * [ ] [Install Homebrew and the `brew` command](http://brew.sh/#install)
