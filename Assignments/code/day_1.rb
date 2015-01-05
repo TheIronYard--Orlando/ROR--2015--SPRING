@@ -17,11 +17,11 @@ weather = "an absolutely beautiful day"
 
 # Add a comment after the following code block showing its return value. 
 # Then add a second comment explaining in English why the code does what it does.
-"Five is #{5 > 4 ? 'greater' : 'lesser'} than four."
+"Five is #{5 > 4 ? 'greater' : 'less'} than four."
 
 # Add a comment after the following code block showing its return value. 
 # Then add a second comment explaining in English why the code does what it does.
-"Five is #{5 > 6 ? 'greater' : 'lesser'} than six."
+"Five is #{5 > 6 ? 'greater' : 'less'} than six."
 
 # Add a comment after the following code block showing its return value. 
 # Then add a second comment explaining in English why the code what it does.
