@@ -118,5 +118,8 @@ After completing this assignment, you will be able to use:
   
   # You can iterate over it:
   (13..19).each{|n| print "#{n} " } #=> 13 14 15 16 17 18 19
+```
 
 ### Additional Resources
+
+http://dillinger.io/ edit a Markdown file, see it as HTML at the same time
