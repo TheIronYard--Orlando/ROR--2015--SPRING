@@ -9,8 +9,11 @@ Today's big new things were functions and methods. A function is just a way to m
 Inside a function or method you can have other functions and methods, and data types. You can also have control structures, like `if` and `else` and `while` and `until`, and comparisons like `<`, `>`, or `==` (which is *not* the same as `=`), as well as logical operators like `&&` and `||`. [That's about it.](https://www.youtube.com/watch?v=WhfK98f5S00) 
 
 For today's assignment, you will write a function that takes the English word for a number and turns it into an actual number. For example:
+
+```ruby
 terrible_method_name("one") #=> 1
 terrible_method_name("twelve") #=> 12
+```
 
 Your function should (a) have a better name than that, and (b) work for any integer up to at least 100. 1_000_000_000 would be better.
 
