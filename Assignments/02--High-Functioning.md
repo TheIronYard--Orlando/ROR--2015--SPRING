@@ -14,7 +14,7 @@ terrible_method_name("twelve") #=> 12
 
 Your function should (a) have a better name than that, and (b) work for any integer up to at least 100. 1_000_000_000 would be better.
 
-Start by writing expectations for some return values given some inputs. Then write out in English the rules for how numbers are named. Then translate your English into Ruby. Include some expectations in your file so you know it works. Save your work in a file called some_expressive_name.rb.
+Start by writing expectations for some return values given some inputs. Then write out in English the rules for how numbers are named. Then translate your English into Ruby. Include some expectations in your file so you know it works. Save your work in a file called *some_expressive_name.rb*.
 
 ## Objectives
 
@@ -61,6 +61,7 @@ After completing this assignment, you will be able to:
 * Comments on your _WIP Issue_ for the following:
     * a link to your wiki (absolute URL)
     * a link to your PR using _Github Flavored Markdown_
+    
 ### Requirements
 
 #### Tasks
@@ -78,6 +79,7 @@ After completing this assignment, you will be able to:
     * [ ] Create at least one file and directory as described above in _Deliverables_.
     * [ ] Add and commit your work every hour or at every breakthrough (whichever comes first)
     * [ ] Push your commits to Github
-    * [ ] In Github, open a PR _from_ `feature/02--high-functioning` _into_ `master`    
+    * [ ] In Github, open a PR _from_ `feature/02--high-functioning` _into_ `master`  
+    
 ### Notes
 If you haven't completed all of the tasks from yesterday, do so.
