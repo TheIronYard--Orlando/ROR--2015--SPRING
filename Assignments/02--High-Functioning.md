@@ -14,7 +14,7 @@ terrible_method_name("twelve") #=> 12
 
 Your function should (a) have a better name than that, and (b) work for any integer up to at least 100. 1_000_000_000 would be better.
 
-Start by writing expectations for some return values given some inputs. Then write out in English the rules for how numbers are named. Then translate your English into Ruby. Include some expectations in your file so you know it works.
+Start by writing expectations for some return values given some inputs. Then write out in English the rules for how numbers are named. Then translate your English into Ruby. Include some expectations in your file so you know it works. Save your work in a file called some_expressive_name.rb.
 
 ## Objectives
 
