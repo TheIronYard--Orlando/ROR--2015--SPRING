@@ -10,8 +10,10 @@ class Fixnum
       "I" * self
     elsif self == 4
       "IV"
-    else
+    elsif self == 5
       "V"
+    else
+      "V" + "I" * (self - 5)
     end
   end
 end
@@ -20,4 +22,4 @@ puts 1.to_roman #=> "I"
 puts 2.to_roman #=> "II"
 puts 4.to_roman #=> "IV"
 puts 5.to_roman #=> "V"
-puts 6.to_roman #=> "V" (should be "VI")
+puts 6.to_roman #=> "VI"
