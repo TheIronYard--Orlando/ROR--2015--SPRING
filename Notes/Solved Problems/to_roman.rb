@@ -12,3 +12,4 @@ end
 
 puts 1.to_roman #=> "I"
 puts 2.to_roman #=> "II"
+puts 4.to_roman #=> "IIII" (should be "IV")
