@@ -2,3 +2,12 @@
 # For example:
 # 3.to_roman => "III"
 # 15.to_roman => "XV"
+
+class Fixnum
+
+  def to_roman
+    "I"
+  end
+end
+
+puts 1.to_roman #=> "I"
