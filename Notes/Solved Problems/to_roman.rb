@@ -6,12 +6,12 @@
 class Fixnum
 
   def to_roman
-    if self <= 3
+    if self == 0
+      ""
+    elsif self <= 3
       "I" * self
     elsif self == 4
       "IV"
-    elsif self == 5
-      "V"
     else
       "V" + (self - 5).to_roman
     end
