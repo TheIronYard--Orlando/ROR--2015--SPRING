@@ -38,7 +38,10 @@ def english_to_number(word_or_words)
   	'eighty' => 80,
   	'ninety' => 90
   }  
-  if word_or_words.include?('thousand')
+  if word_or_words.include?('million')
+  	millions, remainder = word_or_words.split('million')
+  	return english_to_number(millions) * 1_000_000 + english_to_number(remainder)
+  elsif word_or_words.include?('thousand')
   	thousands, remainder = word_or_words.split('thousand')
   	return english_to_number(thousands) * 1000 + english_to_number(remainder)
   elsif word_or_words.include?('hundred')
@@ -57,4 +60,4 @@ puts english_to_number('twenty five') #=> 25
 puts english_to_number('one hundred') #=> 100
 puts english_to_number('six hundred thirty two') #=> 632
 puts english_to_number('four thousand eight hundred twelve') #=> 4812
-puts english_to_number('nine hundred seventeen million thirty six') #=> TypeError
+puts english_to_number('nine hundred seventeen million thirty six') #=> 917000036
