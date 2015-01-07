@@ -18,9 +18,17 @@ class Fixnum
   end
 end
 
-puts 1.to_roman #=> "I"
-puts 2.to_roman #=> "II"
-puts 4.to_roman #=> "IV"
-puts 5.to_roman #=> "V"
-puts 6.to_roman #=> "VI"
-puts 9.to_roman #=> "VIIII" (should be "IX")
+def test(actual_value, expectation)
+  if actual_value == expectation
+    puts "success"
+  else
+    puts "expected #{expectation} but got #{actual_value}"
+  end
+end
+
+test 1.to_roman, "I"
+test 2.to_roman, "II"
+test 4.to_roman, "IV"
+test 5.to_roman, "V"
+test 6.to_roman, "VI"
+test 9.to_roman, "IX" #expected IX but got VIIII
