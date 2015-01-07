@@ -6,9 +6,9 @@
 class Fixnum
 
   def to_roman
-    "I"
+    "I" * self
   end
 end
 
 puts 1.to_roman #=> "I"
-puts 2.to_roman #=> "I" (should be "II")
+puts 2.to_roman #=> "II"
