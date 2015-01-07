@@ -23,3 +23,4 @@ puts 2.to_roman #=> "II"
 puts 4.to_roman #=> "IV"
 puts 5.to_roman #=> "V"
 puts 6.to_roman #=> "VI"
+puts 9.to_roman #=> "VIIII" (should be "IX")
