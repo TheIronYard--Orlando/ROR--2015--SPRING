@@ -6,10 +6,14 @@
 class Fixnum
 
   def to_roman
-    "I" * self
+    if self <= 3
+      "I" * self
+    else
+      "IV"
+    end
   end
 end
 
 puts 1.to_roman #=> "I"
 puts 2.to_roman #=> "II"
-puts 4.to_roman #=> "IIII" (should be "IV")
+puts 4.to_roman #=> "IV"
