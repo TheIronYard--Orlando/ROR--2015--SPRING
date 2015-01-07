@@ -12,8 +12,10 @@ class Fixnum
       "I" * self
     elsif self == 4
       "IV"
-    else
+    elsif self <= 8
       "V" + (self - 5).to_roman
+    else
+      "IX"
     end
   end
 end
@@ -31,4 +33,4 @@ test 2.to_roman, "II"
 test 4.to_roman, "IV"
 test 5.to_roman, "V"
 test 6.to_roman, "VI"
-test 9.to_roman, "IX" #expected IX but got VIIII
+test 9.to_roman, "IX"
