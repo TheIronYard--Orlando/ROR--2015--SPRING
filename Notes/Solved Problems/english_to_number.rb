@@ -6,6 +6,9 @@
 # The function should at least work up to 100. 1_000_000_000_000 would be better.
 
 def english_to_number(word_or_words)
+  if word_or_words == nil #in case recursive call has no argument
+  	word_or_words = ''
+  end
   number_hash = {
   	'one' => 1,
   	'two' => 2,
@@ -34,7 +37,11 @@ def english_to_number(word_or_words)
   	'seventy' => 70,
   	'eighty' => 80,
   	'ninety' => 90
-  }
+  }  
+  if word_or_words.include?('hundred')
+    hundreds, remainder = word_or_words.split('hundred')
+    return english_to_number(hundreds) * 100 + english_to_number(remainder)
+  end
   array_of_words = word_or_words.split
   total = 0
   array_of_words.each{|word| total = total + number_hash[word]}
@@ -44,4 +51,5 @@ end
 puts english_to_number('one') #=> 1
 puts english_to_number('twenty') #=> 20
 puts english_to_number('twenty five') #=> 25
-puts english_to_number('one hundred') #=> TypeError:line 40:in `+': nil can't be coerced into Fixnum 
+puts english_to_number('one hundred') #=> 100
+puts english_to_number('six hundred thirty two') #=> 632
