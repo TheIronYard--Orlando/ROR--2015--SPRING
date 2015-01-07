@@ -57,3 +57,4 @@ puts english_to_number('twenty five') #=> 25
 puts english_to_number('one hundred') #=> 100
 puts english_to_number('six hundred thirty two') #=> 632
 puts english_to_number('four thousand eight hundred twelve') #=> 4812
+puts english_to_number('nine hundred seventeen million thirty six') #=> TypeError
