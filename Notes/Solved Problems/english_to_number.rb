@@ -49,9 +49,7 @@ def english_to_number(word_or_words)
     return english_to_number(hundreds) * 100 + english_to_number(remainder)
   end
   array_of_words = word_or_words.split
-  total = 0
-  array_of_words.each{|word| total = total + number_hash[word]}
-  total
+  array_of_words.inject(0){|sum, string| sum + number_hash[string]}
 end
 
 puts english_to_number('one') #=> 1
