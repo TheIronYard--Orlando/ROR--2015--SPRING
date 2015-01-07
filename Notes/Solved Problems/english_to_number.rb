@@ -44,3 +44,4 @@ end
 puts english_to_number('one') #=> 1
 puts english_to_number('twenty') #=> 20
 puts english_to_number('twenty five') #=> 25
+puts english_to_number('one hundred') #=> TypeError:line 40:in `+': nil can't be coerced into Fixnum 
