@@ -34,3 +34,4 @@ test 4.to_roman, "IV"
 test 5.to_roman, "V"
 test 6.to_roman, "VI"
 test 9.to_roman, "IX"
+test 10.to_roman, "X" #expected X but got IX
