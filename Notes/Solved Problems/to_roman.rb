@@ -11,3 +11,4 @@ class Fixnum
 end
 
 puts 1.to_roman #=> "I"
+puts 2.to_roman #=> "I" (should be "II")
