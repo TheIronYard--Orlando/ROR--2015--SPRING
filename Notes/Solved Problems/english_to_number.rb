@@ -38,7 +38,10 @@ def english_to_number(word_or_words)
   	'eighty' => 80,
   	'ninety' => 90
   }  
-  if word_or_words.include?('hundred')
+  if word_or_words.include?('thousand')
+  	thousands, remainder = word_or_words.split('thousand')
+  	return english_to_number(thousands) * 1000 + english_to_number(remainder)
+  elsif word_or_words.include?('hundred')
     hundreds, remainder = word_or_words.split('hundred')
     return english_to_number(hundreds) * 100 + english_to_number(remainder)
   end
@@ -53,5 +56,4 @@ puts english_to_number('twenty') #=> 20
 puts english_to_number('twenty five') #=> 25
 puts english_to_number('one hundred') #=> 100
 puts english_to_number('six hundred thirty two') #=> 632
-puts english_to_number('four thousand eight hundred twelve') 
-#=> TypeError:line 47:in `+': nil can't be coerced into Fixnum
+puts english_to_number('four thousand eight hundred twelve') #=> 4812
