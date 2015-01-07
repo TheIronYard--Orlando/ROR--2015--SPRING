@@ -13,7 +13,7 @@ class Fixnum
     elsif self == 5
       "V"
     else
-      "V" + "I" * (self - 5)
+      "V" + (self - 5).to_roman
     end
   end
 end
