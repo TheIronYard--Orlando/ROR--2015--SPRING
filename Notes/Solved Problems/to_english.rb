@@ -9,14 +9,16 @@ class Fixnum
                         fourteen fifteen sixteen 
                         seventeen eighteen nineteen
                        )
-    if self > 999
-      remainder = self % 1000
-      thousands = self / 1000
-      internal_calculation(remainder, thousands, "thousand")
-    elsif self > 99
-      remainder = self % 100
-      hundreds = self / 100
-      internal_calculation(remainder, hundreds, "hundred")
+    if self >= 1_000_000_000_000
+      internal_calculation(1_000_000_000_000, "trillion")
+    elsif self >= 1_000_000_000
+      internal_calculation(1_000_000_000, "billion")
+    elsif self >= 1000000
+      internal_calculation(1000000, "million")
+    elsif self >= 1000
+      internal_calculation(1000, "thousand")
+    elsif self >= 100
+      internal_calculation(100, "hundred")
     elsif self > 19
       tens_names = %w(blank blank twenty thirty forty fifty
                       sixty seventy eighty ninety)
@@ -32,7 +34,9 @@ class Fixnum
     end 
   end
  
-  def internal_calculation(remainder, big_number, name)
+  def internal_calculation(place, name)
+    remainder = self % place
+    big_number = self / place
     if remainder > 0
       "#{big_number.to_english} #{name} #{remainder.to_english}"
     else
@@ -60,3 +64,4 @@ puts 2000.to_english
 puts 3456.to_english
 puts 10611.to_english
 puts 999999.to_english
+puts 1000000.to_english
