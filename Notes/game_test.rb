@@ -48,6 +48,13 @@ class TestGame < MiniTest::Unit::TestCase
 
   def test_o_goes_after_x
     @game.move!
-    assert_equal "O's move", @game.current_player
+    assert_equal "O", @game.current_player
   end
+
+  def test_x_goes_after_o
+    @game.move!
+    @game.move!
+    refute_equal "O", @game.current_player
+  end
+
 end

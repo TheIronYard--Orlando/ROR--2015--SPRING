@@ -11,6 +11,7 @@ class Game
     @grid = [['', '', ''], 
              ['', '', ''], 
              ['', '', '']]
+    @current_player = 'X'
   end  
 
   def empty_spaces
@@ -19,6 +20,11 @@ class Game
 
   def move!
     @grid[1][1] = 'X'
+    if @current_player == 'X'
+      @current_player = 'O'
+    else
+      @current_player = 'X'
+    end
   end 
 
   def display
@@ -30,6 +36,6 @@ class Game
   end
 
   def current_player
-    "O's move"
+    @current_player
   end
 end
