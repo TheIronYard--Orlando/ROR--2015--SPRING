@@ -8,6 +8,6 @@ class Game
   #and we can pretend it's a method: Game.new.grid
 
   def initialize #this runs when Game.new is called
-    @grid = :a_thing_which_exists
+    @grid = []
   end    
 end
