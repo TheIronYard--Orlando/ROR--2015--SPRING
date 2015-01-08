@@ -11,10 +11,11 @@ class Fixnum
                        )
     if self > 99
       remainder = self % 100
+      hundreds = self / 100
       if remainder > 0
-        "one hundred #{remainder.to_english}"
+        "#{hundreds.to_english} hundred #{remainder.to_english}"
       else
-        "one hundred"
+        "#{hundreds.to_english} hundred"
       end
     elsif self > 19
       tens_names = %w(blank blank twenty thirty forty fifty
@@ -43,3 +44,5 @@ puts 30.to_english #=> "thirty"
 puts 99.to_english #=> "ninety nine"
 puts 100.to_english #=> "one hundred"
 puts 101.to_english
+puts 178.to_english
+puts 200.to_english
