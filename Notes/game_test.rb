@@ -36,4 +36,13 @@ class TestGame < MiniTest::Unit::TestCase
     @game.move!
     assert_equal 8, @game.empty_spaces.length
   end
+
+  def test_new_game_can_be_displayed
+    assert_equal @game.display, 
+    " | | \n" +
+    "-+-+-\n" +
+    " | | \n" +
+    "-+-+-\n" +
+    " | | \n"
+  end
 end

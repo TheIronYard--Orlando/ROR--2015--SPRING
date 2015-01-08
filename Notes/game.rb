@@ -20,4 +20,12 @@ class Game
   def move!
     @grid[1][1] = 'X'
   end 
+
+  def display
+    " | | \n" +
+    "-+-+-\n" +
+    " | | \n" +
+    "-+-+-\n" +
+    " | | \n"
+  end
 end
