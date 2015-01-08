@@ -3,12 +3,8 @@
 class Fixnum
 
   def to_english
-    names = {
-      0 => "zero",
-      1 => "one",
-      2 => "two"
-    }
-    names[self]
+    names_as_array = %w(zero one two)
+    names_as_array[self]
   end
 end
 
