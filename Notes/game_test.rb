@@ -4,17 +4,21 @@ require './game'
 
 class TestGame < MiniTest::Unit::TestCase
 
+  def setup #this runs before each test
+    @game = Game.new
+  end
+
   def test_game_exists
-    assert Game.new
+    assert @game
   end
 
   def test_game_grid_exists
-    assert Game.new.grid
+    assert @game.grid
   end
 
   def test_game_grid_has_rows
-    assert Game.new.grid.is_a? Array
-    assert_equal 3, Game.new.grid.length
+    assert @game.grid.is_a? Array
+    assert_equal 3, @game.grid.length
   end
 
 end
