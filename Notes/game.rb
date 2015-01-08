@@ -8,6 +8,16 @@ class Game
   #and we can pretend it's a method: Game.new.grid
 
   def initialize #this runs when Game.new is called
-    @grid = [['', '', ''], [''], ['']]
-  end    
+    @grid = [['', '', ''], 
+             ['', '', ''], 
+             ['', '', '']]
+  end  
+
+  def empty_spaces
+    @grid.flatten.select{|space| space == ""}
+  end 
+
+  def move!
+    @grid[1][1] = 'X'
+  end 
 end

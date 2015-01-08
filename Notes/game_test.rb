@@ -23,6 +23,17 @@ class TestGame < MiniTest::Unit::TestCase
 
   def test_every_row_of_game_grid_has_3_columns
     assert @game.grid[0].is_a? Array
-    assert_equal 3, @game.grid[0].length
+    @game.grid.each do |row|
+      assert_equal 3, row.length
+    end
+  end
+
+  def test_game_starts_with_nine_empty_spaces
+    assert_equal 9, @game.empty_spaces.length
+  end
+
+  def test_x_can_make_a_move
+    @game.move!
+    assert_equal 8, @game.empty_spaces.length
   end
 end
