@@ -9,7 +9,9 @@ class Fixnum
                         fourteen fifteen sixteen 
                         seventeen eighteen nineteen
                        )
-    if self > 99
+    if self > 999
+      "one thousand"
+    elsif self > 99
       remainder = self % 100
       hundreds = self / 100
       if remainder > 0
@@ -46,3 +48,5 @@ puts 100.to_english #=> "one hundred"
 puts 101.to_english
 puts 178.to_english
 puts 200.to_english
+puts 543.to_english
+puts 1000.to_english
