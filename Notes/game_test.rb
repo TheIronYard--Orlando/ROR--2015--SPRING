@@ -16,9 +16,13 @@ class TestGame < MiniTest::Unit::TestCase
     assert @game.grid
   end
 
-  def test_game_grid_has_rows
+  def test_game_grid_has_3_rows
     assert @game.grid.is_a? Array
     assert_equal 3, @game.grid.length
   end
 
+  def test_every_row_of_game_grid_has_3_columns
+    assert @game.grid[0].is_a? Array
+    assert_equal 3, @game.grid[0].length
+  end
 end
