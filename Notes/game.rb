@@ -28,4 +28,8 @@ class Game
     "-+-+-\n" +
     " | | \n"
   end
+
+  def current_player
+    "O's move"
+  end
 end

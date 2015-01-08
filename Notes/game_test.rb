@@ -45,4 +45,9 @@ class TestGame < MiniTest::Unit::TestCase
     "-+-+-\n" +
     " | | \n"
   end
+
+  def test_o_goes_after_x
+    @game.move!
+    assert_equal "O's move", @game.current_player
+  end
 end
