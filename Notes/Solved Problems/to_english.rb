@@ -3,11 +3,22 @@
 class Fixnum
 
   def to_english
-    names_as_array = %w(zero one two)
-    names_as_array[self]
+    names_as_array = %w(zero one two three four
+                        five six seven eight nine
+                        ten eleven twelve thirteen
+                        fourteen fifteen sixteen 
+                        seventeen eighteen nineteen twenty
+                       )
+    if self > 20
+      "twenty one"
+    else
+      names_as_array[self]  
+    end 
   end
 end
 
 puts 0.to_english #=> "zero"
 puts 1.to_english #=> "one"
 puts 2.to_english #=> "two"
+puts 9.to_english #=> "nine"
+puts 21.to_english #=> "twenty one"
