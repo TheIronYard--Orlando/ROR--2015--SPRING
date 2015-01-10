@@ -4,57 +4,38 @@ require './game'
 
 class TestGame < MiniTest::Unit::TestCase
 
-  def setup #this runs before each test
-    @game = Game.new
-  end
+# there's a board
+  # with 9 spaces
+  # the board is 3x3
+  # 3 spaces across, 3 top-to-bottom, 
+  # has 3 rows and 3 columns
+  # it looks like  | |
+  #               -----
+  #                | | 
+  #               -----
+  #                | |
+  # so the columns and rows overlap
+  # like, the first column, that's the first space from each of the rows
+
+  # really the rows and columns aren't the most basic thing
+  # the spaces are the *most* basic thing
+  # and they're arranged into rows and columns
+
+
+# there are 2 players
+  # player X and player O
+# players take turns
+  # on each turn you put in an X or an O
+  # you have to put your X or O in an empty space
+# the game ends when there are 3 X's or 3 O's in a row
+  # that's 3 across or 3 top to bottom or 3 in a diagonal 
+# or it's a tie if the board gets full
+
+# nouns: board, player(?), turn
+# verbs: put - might call that 'move'
 
   def test_game_exists
-    assert @game
-  end
-
-  def test_game_grid_exists
-    assert @game.grid
-  end
-
-  def test_game_grid_has_3_rows
-    assert @game.grid.is_a? Array
-    assert_equal 3, @game.grid.length
-  end
-
-  def test_every_row_of_game_grid_has_3_columns
-    assert @game.grid[0].is_a? Array
-    @game.grid.each do |row|
-      assert_equal 3, row.length
-    end
-  end
-
-  def test_game_starts_with_nine_empty_spaces
-    assert_equal 9, @game.empty_spaces.length
-  end
-
-  def test_x_can_make_a_move
-    @game.move!
-    assert_equal 8, @game.empty_spaces.length
-  end
-
-  def test_new_game_can_be_displayed
-    assert_equal @game.display, 
-    " | | \n" +
-    "-+-+-\n" +
-    " | | \n" +
-    "-+-+-\n" +
-    " | | \n"
-  end
-
-  def test_o_goes_after_x
-    @game.move!
-    assert_equal "O", @game.current_player
-  end
-
-  def test_x_goes_after_o
-    @game.move!
-    @game.move!
-    refute_equal "O", @game.current_player
+    assert Game.new
   end
 
 end
