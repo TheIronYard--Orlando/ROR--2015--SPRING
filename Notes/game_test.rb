@@ -4,24 +4,6 @@ require './game'
 
 class TestGame < MiniTest::Unit::TestCase
 
-# there's a board
-  # with 9 spaces
-  # the board is 3x3
-  # 3 spaces across, 3 top-to-bottom, 
-  # has 3 rows and 3 columns
-  # it looks like  | |
-  #               -----
-  #                | | 
-  #               -----
-  #                | |
-  # so the columns and rows overlap
-  # like, the first column, that's the first space from each of the rows
-
-  # really the rows and columns aren't the most basic thing
-  # the spaces are the *most* basic thing
-  # and they're arranged into rows and columns
-
-
 # there are 2 players
   # player X and player O
 # players take turns
@@ -52,6 +34,23 @@ end
 # own class.
 class TestBoard < MiniTest::Unit::TestCase
  
+# there's a board
+  # with 9 spaces
+  # the board is 3x3
+  # 3 spaces across, 3 top-to-bottom, 
+  # has 3 rows and 3 columns
+  # it looks like  | |
+  #               -----
+  #                | | 
+  #               -----
+  #                | |
+  # so the columns and rows overlap
+  # like, the first column, that's the first space from each of the rows
+
+  # really the rows and columns aren't the most basic thing
+  # the spaces are the *most* basic thing
+  # and they're arranged into rows and columns
+  
   def setup
     @board = Game.new.board
   end
