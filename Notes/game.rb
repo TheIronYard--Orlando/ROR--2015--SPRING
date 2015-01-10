@@ -80,8 +80,11 @@ class Board
 
   def place(player, row, column)
     if rows[row][column] == ' '
-      rows[row][column] = player 
-      puts display
+      rows[row][column] = player
+      # AAAGH! This doesn't work! I want to change what's on the board,
+      # but #rows isn't the *same* as @spaces, it's *a new set of arrays*
+      # so when I put things in the arrays made by rows, they don't end up
+      # back in @spaces at all.
       return true
     else
       puts "That space is occupied by '#{rows[row][column]}'"
