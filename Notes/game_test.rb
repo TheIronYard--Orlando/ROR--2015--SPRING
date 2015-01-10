@@ -63,4 +63,10 @@ class TestBoard < MiniTest::Unit::TestCase
   def test_board_spaces_are_in_three_rows
     assert_equal 3, @board.rows.length
   end
+
+  def test_row_has_three_spaces
+    @board.rows.each do |row|
+      assert_equal 3, row.length
+    end
+  end
 end
