@@ -83,7 +83,13 @@ class Board
 
   def won_by?(player)
     rows.any?{ |row| three_in_a_row?(row, player) } ||
-    columns.any?{ |column| three_in_a_row?(column, player) }
+    columns.any?{ |column| three_in_a_row?(column, player) } ||
+    diagonals.any?{|diagonal| three_in_a_row?(diagonal, player)}
+  end
+
+  def diagonals
+    [ [rows[0][0], rows[1][1], rows[2][2]],
+      [rows[2][0], rows[1][1], rows[0][2]]]
   end
 
   def three_in_a_row?(spaces, player)

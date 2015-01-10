@@ -59,14 +59,22 @@ class TestGame < MiniTest::Unit::TestCase
   end
 
   def test_x_wins_with_three_xs_in_column
-    @game.move!(0, 0) # x in 1st row
+    @game.move!(0, 0) # x in 1st column
     @game.move!(0, 1) # o
-    @game.move!(1, 0) # x in 1st row
+    @game.move!(1, 0) # x in 1st column
     @game.move!(2, 2) # o
-    @game.move!(2, 0) # x in 1st row
+    @game.move!(2, 0) # x in 1st column
     assert_equal 'X', @game.winner
   end
 
+  def test_x_wins_with_three_xs_in_diagonal
+    @game.move!(0, 0) # x in top left
+    @game.move!(0, 1) # o
+    @game.move!(1, 1) # x in center
+    @game.move!(2, 0) # o
+    @game.move!(2, 2) # x in bottom right
+    assert_equal 'X', @game.winner
+  end
 end
 
 # the tests that look into the details of a board should be in their
