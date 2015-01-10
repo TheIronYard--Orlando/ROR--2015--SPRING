@@ -84,6 +84,8 @@ class Board
   def won_by?(player)
     rows.any? do |row| 
       row.all?{|space| space == player}
+    end || columns.any? do |column|
+      column.all?{|space| space == player }
     end
   end
 
