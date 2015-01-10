@@ -72,4 +72,14 @@ class TestBoard < MiniTest::Unit::TestCase
   def test_board_spaces_are_in_three_columns
     assert_equal 3, @board.columns.length
   end
+
+  def test_board_displays_as_a_grid
+    display_output = " | | \n" +
+                     "-----\n" +
+                     " | | \n" +
+                     "-----\n" +
+                     " | | \n" 
+    assert_equal display_output, @board.display
+  end
+
 end

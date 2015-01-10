@@ -46,4 +46,13 @@ class Board
     # but I want to be more clever
     rows.transpose
   end
+
+  def display
+    array_of_row_strings = rows.map do |row| 
+      row.join('|') + "\n" # turns a row [' ', ' ', ' '] => " | | /n" 
+    end
+    #array_of_row_strings is now [ " | | /n", " | | /n", " | | /n" ]
+    #next, join those together with horizontal lines "-----\n"
+    array_of_row_strings.join("-----\n")
+  end
 end
