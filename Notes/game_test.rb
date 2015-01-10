@@ -81,8 +81,8 @@ class TestBoard < MiniTest::Unit::TestCase
     @board = Game.new.board
   end
 
-  def test_board_has_nine_spaces
-    assert_equal 9, @board.spaces.length
+  def test_board_has_nine_spaces #had to change spaces to spaces.flatten
+    assert_equal 9, @board.spaces.flatten.length
   end
 
   def test_board_spaces_are_in_three_rows
@@ -90,7 +90,7 @@ class TestBoard < MiniTest::Unit::TestCase
   end
 
   def test_row_has_three_spaces
-    @board.rows.each do |row|
+    @board.spaces.each do |row|
       assert_equal 3, row.length
     end
   end

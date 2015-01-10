@@ -40,32 +40,19 @@ class Board
   attr_accessor :spaces #without this, board.spaces doesn't work
 
   def initialize
-    @spaces = Array.new(9){ ' ' }
-    #that's a shortcut way of making an array with nine spaces
-    # [ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ]
+    flat_array = Array.new(9){ ' ' }
+    # it will be easier to put X's and O's on the board
+    # if I let @spaces be an array of arrays.
+    @spaces = flat_array.each_slice(3).to_a
+    # that was the old #rows method. 
   end
 
   def rows
-    # a row is a group (array) of three spaces.
-    # the rows method will return an array of all the rows on the board. 
-    # since @spaces is already an array, I need a way to divide that up
-    # [ @spaces[0..2], @spaces[3..5], @spaces[6..8] ] works
-    @spaces.each_slice(3).to_a #this works too
+    @spaces #since I moved the array nesting into @spaces, 
+    # rows and @spaces are the same.
   end
 
   def columns
-    # if I just write @spaces on multiple lines
-    # [ ' ', ' ', ' ',
-    #   ' ', ' ', ' ',
-    #   ' ', ' ', ' ']
-    # I can see that the first column takes the 1st space, the 4th, and the 7th.
-    # in array indexes, that's @spaces[0], @spaces[3], @spaces[6]
-    # so if I couldn't figure out some kind of mapping, I could make
-    # columns work like
-    # [ [@spaces[0], @spaces[3], @spaces[6]], 
-    #   [@spaces[1], @spaces[4], @spaces[7]],
-    #   [@spaces[2], @spaces[5], @spaces[8]]]
-    # but I want to be more clever
     rows.transpose
   end
 
@@ -81,10 +68,6 @@ class Board
   def place(player, row, column)
     if rows[row][column] == ' '
       rows[row][column] = player
-      # AAAGH! This doesn't work! I want to change what's on the board,
-      # but #rows isn't the *same* as @spaces, it's *a new set of arrays*
-      # so when I put things in the arrays made by rows, they don't end up
-      # back in @spaces at all.
       return true
     else
       puts "That space is occupied by '#{rows[row][column]}'"
