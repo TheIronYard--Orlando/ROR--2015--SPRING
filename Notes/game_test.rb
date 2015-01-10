@@ -38,4 +38,11 @@ class TestGame < MiniTest::Unit::TestCase
     assert Game.new
   end
 
+  def test_board_exists
+    assert Game.new.board
+  end
+
+  def test_board_has_nine_spaces
+    assert_equal 9, Game.new.board.length
+  end
 end
