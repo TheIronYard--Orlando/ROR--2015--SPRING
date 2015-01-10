@@ -30,4 +30,20 @@ class Board
     # [ @spaces[0..2], @spaces[3..5], @spaces[6..8] ] works
     @spaces.each_slice(3).to_a #this works too
   end
+
+  def columns
+    # if I just write @spaces on multiple lines
+    # [ ' ', ' ', ' ',
+    #   ' ', ' ', ' ',
+    #   ' ', ' ', ' ']
+    # I can see that the first column takes the 1st space, the 4th, and the 7th.
+    # in array indexes, that's @spaces[0], @spaces[3], @spaces[6]
+    # so if I couldn't figure out some kind of mapping, I could make
+    # columns work like
+    # [ [@spaces[0], @spaces[3], @spaces[6]], 
+    #   [@spaces[1], @spaces[4], @spaces[7]],
+    #   [@spaces[2], @spaces[5], @spaces[8]]]
+    # but I want to be more clever
+    rows.transpose
+  end
 end

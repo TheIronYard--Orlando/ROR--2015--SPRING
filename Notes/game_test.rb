@@ -69,4 +69,8 @@ class TestBoard < MiniTest::Unit::TestCase
       assert_equal 3, row.length
     end
   end
+
+  def test_board_spaces_are_in_three_columns
+    assert_equal 3, @board.columns.length
+  end
 end
