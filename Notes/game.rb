@@ -4,20 +4,26 @@ class Game
   # we'll play this within irb, by making moves
   # until somebody wins.
 
-  attr_accessor :board #this means we can
-  #interact with the instance variable @board
-  #and we can pretend it's a method: Game.new.board
+  attr_accessor :board, :current_player
+
+
 
   def initialize #this runs when Game.new is called
     @board = Board.new
     @current_player = 'X'
   end 
 
-  def move!
-    @board.spaces[0] = @current_player #just reuses 1st space! that's
-    # not right. Tests pass though. I must need more tests.
-    switch_players # moved this to a separate method to make it
-    # easier to read this one.
+  def move!(row, column)
+    # move is something that happens in the game, but it concerns the
+    # board. Only the game knows who @current_player is though.
+    # so I made a method to tell board to place @current_player (X or O)
+    # wherever move! was made, with the same row and column.
+    # then @board can check whether the space is empty and whether the
+    # placement was successful, returning true or nil to let the game know
+    # whether it should switch players or not.
+    if @board.place(@current_player, row, column)
+      switch_players
+    end
   end
 
   def switch_players
@@ -71,4 +77,14 @@ class Board
     #next, join those together with horizontal lines "-----\n"
     array_of_row_strings.join("-----\n")
   end
+
+  def place(player, row, column)
+    if rows[row][column] == ' '
+      rows[row][column] = player 
+      puts display
+      return true
+    else
+      puts "That space is occupied by '#{rows[row][column]}'"
+    end  
+  end    
 end
