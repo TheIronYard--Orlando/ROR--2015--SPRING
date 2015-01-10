@@ -9,8 +9,17 @@ class Game
   #and we can pretend it's a method: Game.new.board
 
   def initialize #this runs when Game.new is called
-    @board = Array.new(9){ ' ' }
+    @board = Board.new
+  end 
+end
+
+class Board
+
+  attr_accessor :spaces #without this, board.spaces doesn't work
+
+  def initialize
+    @spaces = Array.new(9){ ' ' }
     #that's a shortcut way of making an array with nine spaces
     # [ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ]
-  end 
+  end
 end

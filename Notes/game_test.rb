@@ -47,7 +47,7 @@ class TestGame < MiniTest::Unit::TestCase
   end
 
   def test_board_has_nine_spaces
-    assert_equal 9, @game.board.length
+    assert_equal 9, @game.board.spaces.length
   end
 
   #def test_board_spaces_are_in_three_rows
