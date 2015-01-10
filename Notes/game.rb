@@ -82,11 +82,12 @@ class Board
   end
 
   def won_by?(player)
-    rows.any? do |row| 
-      row.all?{|space| space == player}
-    end || columns.any? do |column|
-      column.all?{|space| space == player }
-    end
+    rows.any?{ |row| three_in_a_row?(row, player) } ||
+    columns.any?{ |column| three_in_a_row?(column, player) }
+  end
+
+  def three_in_a_row?(spaces, player)
+    spaces.all?{|space| space == player }
   end
 
 end
