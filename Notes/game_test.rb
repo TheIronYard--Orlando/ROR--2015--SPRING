@@ -28,6 +28,14 @@ class TestGame < MiniTest::Unit::TestCase
     assert @game.board
   end
 
+  #def test_x_goes_first
+  # I thought this was important, but I don't know what it means to 'go'.
+  #end
+
+  def test_making_first_move_puts_x_on_board
+    @game.move!
+    assert @game.board.spaces.any?{|space| space == 'X'}
+  end
 end
 
 # the tests that look into the details of a board should be in their

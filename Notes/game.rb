@@ -11,6 +11,10 @@ class Game
   def initialize #this runs when Game.new is called
     @board = Board.new
   end 
+
+  def move!
+    @board.spaces[0] = 'X'
+  end
 end
 
 class Board
