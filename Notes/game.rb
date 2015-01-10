@@ -22,4 +22,12 @@ class Board
     #that's a shortcut way of making an array with nine spaces
     # [ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ]
   end
+
+  def rows
+    # a row is a group (array) of three spaces.
+    # the rows method will return an array of all the rows on the board. 
+    # since @spaces is already an array, I need a way to divide that up
+    # [ @spaces[0..2], @spaces[3..5], @spaces[6..8] ] works
+    @spaces.each_slice(3).to_a #this works too
+  end
 end

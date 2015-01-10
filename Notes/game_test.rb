@@ -50,12 +50,8 @@ class TestGame < MiniTest::Unit::TestCase
     assert_equal 9, @game.board.spaces.length
   end
 
-  #def test_board_spaces_are_in_three_rows
-  #  assert_equal 3, @game.board.rows.length
-  #end
-  # I tried this and got stuck, because if a board is just an
-  # instance variable that's an array, it doesn't have rows.
-  # (Arrays don't have rows.)
-  # That's why I decided I'd change the board to its own class,
-  # so it could have its own methods.
+  def test_board_spaces_are_in_three_rows
+    assert_equal 3, @game.board.rows.length
+  end
+  # now that the board is its own class, it can have its own methods
 end
