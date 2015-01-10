@@ -10,10 +10,22 @@ class Game
 
   def initialize #this runs when Game.new is called
     @board = Board.new
+    @current_player = 'X'
   end 
 
   def move!
-    @board.spaces[0] = 'X'
+    @board.spaces[0] = @current_player #just reuses 1st space! that's
+    # not right. Tests pass though. I must need more tests.
+    switch_players # moved this to a separate method to make it
+    # easier to read this one.
+  end
+
+  def switch_players
+    if @current_player == 'X'
+      @current_player = 'O'
+    else
+      @current_player = 'X'
+    end
   end
 end
 

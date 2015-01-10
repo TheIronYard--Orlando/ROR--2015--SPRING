@@ -36,6 +36,12 @@ class TestGame < MiniTest::Unit::TestCase
     @game.move!
     assert @game.board.spaces.any?{|space| space == 'X'}
   end
+
+  def test_making_second_move_puts_o_on_board
+    @game.move!
+    @game.move!
+    assert @game.board.spaces.any?{|space| space == 'O'}
+  end
 end
 
 # the tests that look into the details of a board should be in their
