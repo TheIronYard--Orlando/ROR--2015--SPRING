@@ -34,15 +34,20 @@ class TestGame < MiniTest::Unit::TestCase
 # nouns: board, player(?), turn
 # verbs: put - might call that 'move'
 
+  def setup
+    @game = Game.new
+  end
+
   def test_game_exists
-    assert Game.new
+    assert @game
   end
 
   def test_board_exists
-    assert Game.new.board
+    assert @game.board
   end
 
   def test_board_has_nine_spaces
-    assert_equal 9, Game.new.board.length
+    assert_equal 9, @game.board.length
   end
+
 end
