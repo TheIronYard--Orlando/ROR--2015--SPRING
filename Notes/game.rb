@@ -82,9 +82,15 @@ class Board
   end
 
   def won_by?(player)
-    rows.any?{ |row| three_in_a_row?(row, player) } ||
-    columns.any?{ |column| three_in_a_row?(column, player) } ||
-    diagonals.any?{|diagonal| three_in_a_row?(diagonal, player)}
+    ways_to_win.any?{ |spaces| three_in_a_row?(spaces, player) } 
+  end
+
+  def ways_to_win
+    [columns, rows, diagonals].flatten(1)
+    # why flatten(1) instead of flatten ?
+    # flatten would flatten it all the way to the individual spaces
+    # I want [ ['X', 'O', 'X'], ['O', 'X', 'O'], ...]
+    # not [ 'X', 'O', 'X', 'O', 'X', 'O', ...] 
   end
 
   def diagonals
