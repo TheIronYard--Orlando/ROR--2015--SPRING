@@ -46,12 +46,21 @@ class TestGame < MiniTest::Unit::TestCase
     assert @game.board
   end
 
+end
+
+# the tests that look into the details of a board should be in their
+# own class.
+class TestBoard < MiniTest::Unit::TestCase
+ 
+  def setup
+    @board = Game.new.board
+  end
+
   def test_board_has_nine_spaces
-    assert_equal 9, @game.board.spaces.length
+    assert_equal 9, @board.spaces.length
   end
 
   def test_board_spaces_are_in_three_rows
-    assert_equal 3, @game.board.rows.length
+    assert_equal 3, @board.rows.length
   end
-  # now that the board is its own class, it can have its own methods
 end
