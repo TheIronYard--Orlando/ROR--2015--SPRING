@@ -4,9 +4,7 @@ class Game
   # we'll play this within irb, by making moves
   # until somebody wins.
 
-  attr_accessor :board, :current_player
-
-
+  attr_accessor :board, :current_player, :winner
 
   def initialize #this runs when Game.new is called
     @board = Board.new
@@ -22,7 +20,12 @@ class Game
     # placement was successful, returning true or nil to let the game know
     # whether it should switch players or not.
     if @board.place(@current_player, row, column)
-      switch_players
+      if over?
+        @winner = @current_player
+        puts "Game over! #{winner} won!"
+      else
+        switch_players
+      end
     end
   end
 
@@ -32,6 +35,10 @@ class Game
     else
       @current_player = 'X'
     end
+  end
+
+  def over?
+    board.won_by?(@current_player)
   end
 end
 
@@ -72,5 +79,12 @@ class Board
     else
       puts "That space is occupied by '#{rows[row][column]}'"
     end  
-  end    
+  end
+
+  def won_by?(player)
+    rows.any? do |row| 
+      row.all?{|space| space == player}
+    end
+  end
+
 end
