@@ -91,8 +91,16 @@ end
 
 class TestBlackjack < MiniTest::Unit::TestCase
 
+  def setup
+    @game = Blackjack.new
+  end
+
   def test_game_exists
-    assert Blackjack.new
+    assert @game
+  end
+
+  def test_game_has_deck_of_cards
+    assert @game.deck
   end
 
 end
