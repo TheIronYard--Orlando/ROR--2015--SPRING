@@ -47,7 +47,7 @@ class Blackjack
 
   def initialize
     @deck = Deck.new
-    @player = :player 
+    @player = Player.new
     @dealer = :dealer 
   end
 end
