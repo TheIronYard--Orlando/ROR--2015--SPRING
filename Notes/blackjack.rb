@@ -48,10 +48,15 @@ class Blackjack
   def initialize
     @deck = Deck.new
     @player = :player 
-    @dealer = :dealer #simplest possible thing...
+    @dealer = :dealer 
   end
 end
 
 class Player
 
+  attr_reader :hand # yes, reader, even though I'll change it during the game
+
+  def initialize
+    @hand = :hand #simplest possible thing...
+  end
 end

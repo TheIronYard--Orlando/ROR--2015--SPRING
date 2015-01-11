@@ -127,4 +127,8 @@ class TestPlayer < MiniTest::Unit::TestCase
   def test_player_exists
     assert @player
   end
+
+  def test_player_has_hand
+    assert @player.hand
+  end
 end
