@@ -69,8 +69,8 @@ class TestDeck < MiniTest::Unit::TestCase
   end
 
   def test_deck_has_52_cards
-    assert_equal 52, @deck.cards.length
-    assert_kind_of Card, @deck.cards[0]
+    assert_equal 52, @deck.length
+    assert_kind_of Card, @deck[0]
   end
 
 end

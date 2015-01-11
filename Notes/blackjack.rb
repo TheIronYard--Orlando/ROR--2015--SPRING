@@ -11,7 +11,7 @@ end
 
 class Deck
 
-  attr_reader :cards
+  #attr_reader :cards don't need this anymore with methods using @cards
 
   def initialize
     @cards = []
@@ -24,5 +24,9 @@ class Deck
 
   def length
     @cards.length
+  end
+
+  def [](index)
+    @cards[index]
   end
 end
