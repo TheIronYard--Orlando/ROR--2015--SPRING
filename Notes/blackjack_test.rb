@@ -36,3 +36,12 @@
 # * the dealer must hit until the hand is valued at 17 or greater
 # * at that point the dealer must stand
 # once the dealer stands or busts, all bets are settled and the round is over
+require 'minitest/autorun'
+require './blackjack'
+
+class TestBlackjack < MiniTest::Unit::TestCase
+
+  def test_card_exists
+    assert Card.new
+  end
+end
