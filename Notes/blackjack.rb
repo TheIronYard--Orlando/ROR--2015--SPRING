@@ -1,11 +1,20 @@
 class Card
 
-  attr_reader :value, :suit# this is like attr_accessor, but read-only
-                    # meaning we can't do something like card.suit = :spades
-                    # to *change* a card's suit
+  attr_reader :suit # I got read of the attr_reader for value
+                    # bc I need to define a method
+                    # to account for face cards
+
   def initialize(value, suit)
     @value = value
     @suit = suit
+  end
+
+  def value
+    if @value.is_a?(Fixnum)
+      @value
+    else
+      10
+    end
   end
 end
 

@@ -56,6 +56,11 @@ class TestCard < MiniTest::Unit::TestCase
   def test_card_has_value
     assert_equal 2, @card.value
   end
+
+  def test_face_card_valued_at_10
+    card = Card.new(:king, :diamonds)
+    assert_equal 10, card.value
+  end
 end
 
 class TestDeck < MiniTest::Unit::TestCase
