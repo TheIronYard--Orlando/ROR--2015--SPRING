@@ -1,4 +1,16 @@
 # the game of blackjack:
+
+# a deck of playing cards has 4 suits, hearts/diamonds/clubs/spades
+# for each suit, there is a numbered card for each number 2-10
+# there is also an ace, a king, a queen, and a jack
+# so a card has a suit and a value
+# at the start of a card game the deck should be shuffled into random order
+# when a card is dealt from the deck, it's removed from the deck and ends up in a player's/dealer's hand
+
+# a hand has cards in it
+# the hand belongs to a player
+# the hand has a value based on its cards
+
 # using one standard deck of playing cards,
 # one player is given two cards by the dealer
 # the dealer gets two cards, one of which stays face down
