@@ -41,12 +41,15 @@ require './blackjack'
 
 class TestBlackjack < MiniTest::Unit::TestCase
 
+  def setup
+    @card = Card.new(:hearts)
+  end
+
   def test_card_exists
-    assert Card.new(:hearts)
+    assert @card
   end
 
   def test_card_has_suit
-    card = Card.new(:hearts)
-    assert_equal :hearts, card.suit
+    assert_equal :hearts, @card.suit
   end
 end
