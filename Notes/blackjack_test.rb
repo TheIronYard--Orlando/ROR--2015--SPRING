@@ -116,11 +116,10 @@ class TestBlackjack < MiniTest::Unit::TestCase
     assert @game.dealer
   end
 
-  #def test_player_starts_with_2_cards_from_deck
-  #  assert_equal 2, @game.player.hand.length
-  #end 
-  # I can't quite do that yet, because I don't know how to get cards
-  # out of the deck
+  def test_player_starts_with_2_cards_from_deck
+    assert_equal 2, @game.player.hand.length
+  end 
+  
 end
 
 

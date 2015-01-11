@@ -51,7 +51,7 @@ class Blackjack
 
   def initialize
     @deck = Deck.new
-    @player = Player.new
+    @player = Player.new(@deck.deal(2))
     @dealer = :dealer 
   end
 end
@@ -60,8 +60,10 @@ class Player
 
   attr_reader :hand # yes, reader, even though I'll change it during the game
 
-  def initialize
-    @hand = [] 
+  def initialize(cards = []) # default value just a placeholder bc I
+                             # lazily don't want to change Player.new
+                             # in tests
+    @hand = cards 
   end
 
   def take(card)
