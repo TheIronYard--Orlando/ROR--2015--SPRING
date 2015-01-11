@@ -43,9 +43,10 @@ end
 
 class Blackjack
 
-  attr_reader :deck
-  
+  attr_reader :deck, :player
+
   def initialize
     @deck = Deck.new
+    @player = :player #simplest possible thing...
   end
 end

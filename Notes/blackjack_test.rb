@@ -103,4 +103,7 @@ class TestBlackjack < MiniTest::Unit::TestCase
     assert @game.deck
   end
 
+  def test_game_has_a_player
+    assert @game.player
+  end
 end
