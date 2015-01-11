@@ -8,3 +8,7 @@ class Card
     @suit = suit
   end
 end
+
+class Deck
+
+end

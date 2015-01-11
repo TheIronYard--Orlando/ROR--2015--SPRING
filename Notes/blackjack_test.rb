@@ -57,3 +57,14 @@ class TestCard < MiniTest::Unit::TestCase
     assert_equal 2, @card.value
   end
 end
+
+class TestDeck < MiniTest::Unit::TestCase
+
+  def setup
+    @deck = Deck.new
+  end
+
+  def test_deck_exists
+    assert @deck
+  end
+end
