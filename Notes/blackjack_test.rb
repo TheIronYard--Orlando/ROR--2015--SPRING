@@ -39,7 +39,7 @@
 require 'minitest/autorun'
 require './blackjack'
 
-class TestBlackjack < MiniTest::Unit::TestCase
+class TestCard < MiniTest::Unit::TestCase
 
   def setup
     @card = Card.new(2, :hearts)
