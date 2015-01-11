@@ -18,7 +18,7 @@ class Deck
       ((2..10).to_a + [ :jack, :queen, :king, :ace ]).map do |value|
         Card.new(value, suit)
       end
-    end.flatten
+    end.flatten.shuffle
   end
 
   def length

@@ -73,4 +73,8 @@ class TestDeck < MiniTest::Unit::TestCase
     assert_kind_of Card, @deck[0]
   end
 
+  def test_deck_starts_shuffled
+    pass # how could you test this?
+  end
+
 end
