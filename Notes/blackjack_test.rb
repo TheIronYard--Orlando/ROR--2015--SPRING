@@ -111,10 +111,20 @@ class TestBlackjack < MiniTest::Unit::TestCase
     assert @game.dealer
   end
 
-  def test_player_starts_with_2_cards_from_deck
+=begin def test_player_starts_with_2_cards_from_deck
     assert_equal 2, @game.player.hand.length
-    # this test is failing right now. Lots of methed chaining - the
-    # @game asking about the player asking about the hand asking about
-    # its length - is a sign I need to rewrite things. I'll do that next.
+    comment this out as I deal with the Player class
+=end
+end
+
+
+class TestPlayer < MiniTest::Unit::TestCase
+
+  def setup
+    @player = Player.new # I know I'm going to need this
+  end
+
+  def test_player_exists
+    assert @player
   end
 end

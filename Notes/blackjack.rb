@@ -51,3 +51,7 @@ class Blackjack
     @dealer = :dealer #simplest possible thing...
   end
 end
+
+class Player
+
+end
