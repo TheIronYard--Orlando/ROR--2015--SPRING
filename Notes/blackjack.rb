@@ -14,12 +14,11 @@ class Deck
   #attr_reader :cards don't need this anymore with methods using @cards
 
   def initialize
-    @cards = []
-    [ :hearts, :diamonds, :clubs, :spades ].each do |suit|
-      ((2..10).to_a + [ :jack, :queen, :king, :ace ]).each do |value|
-        @cards << Card.new(value, suit)
+    @cards = [ :hearts, :diamonds, :clubs, :spades ].map do |suit|
+      ((2..10).to_a + [ :jack, :queen, :king, :ace ]).map do |value|
+        Card.new(value, suit)
       end
-    end
+    end.flatten
   end
 
   def length
