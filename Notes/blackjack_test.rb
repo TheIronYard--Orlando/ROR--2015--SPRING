@@ -67,4 +67,8 @@ class TestDeck < MiniTest::Unit::TestCase
   def test_deck_exists
     assert @deck
   end
+
+  def test_deck_has_52_cards
+    assert_equal 52, @deck.cards.length
+  end
 end

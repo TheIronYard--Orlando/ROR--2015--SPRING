@@ -11,4 +11,18 @@ end
 
 class Deck
 
+  attr_reader :cards
+
+  def initialize
+    @cards = []
+    [ :hearts, :diamonds, :clubs, :spades ].each do |suit|
+      ((2..10).to_a + [ :jack, :queen, :king, :ace ]).each do |value|
+        @cards << Card.new(value, suit)
+      end
+    end
+  end
+
+  def length
+    @cards.length
+  end
 end
