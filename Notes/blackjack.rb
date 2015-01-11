@@ -40,8 +40,8 @@ class Deck
     @cards[index]
   end
 
-  def deal
-    @cards.shift
+  def deal(n)
+    @cards.shift(n)
   end
 end
 
