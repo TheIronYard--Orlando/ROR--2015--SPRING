@@ -40,3 +40,7 @@ class Deck
     @cards[index]
   end
 end
+
+class Blackjack
+
+end

@@ -88,3 +88,11 @@ class TestDeck < MiniTest::Unit::TestCase
   end
 
 end
+
+class TestBlackjack < MiniTest::Unit::TestCase
+
+  def test_game_exists
+    assert Blackjack.new
+  end
+
+end
