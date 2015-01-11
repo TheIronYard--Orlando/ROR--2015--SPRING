@@ -131,4 +131,10 @@ class TestPlayer < MiniTest::Unit::TestCase
   def test_player_has_hand
     assert @player.hand
   end
+
+  def test_player_hand_holds_cards
+    card = Card.new(2, :hearts)
+    @player.take card
+    assert @player.hand.include? card
+  end
 end

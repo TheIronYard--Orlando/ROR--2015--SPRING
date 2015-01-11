@@ -57,6 +57,10 @@ class Player
   attr_reader :hand # yes, reader, even though I'll change it during the game
 
   def initialize
-    @hand = :hand #simplest possible thing...
+    @hand = [] 
+  end
+
+  def take(card)
+    @hand << card
   end
 end
