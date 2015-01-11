@@ -39,6 +39,10 @@ class Deck
   def [](index)
     @cards[index]
   end
+
+  def deal
+    @cards.shift
+  end
 end
 
 class Blackjack

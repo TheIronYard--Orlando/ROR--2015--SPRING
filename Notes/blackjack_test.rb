@@ -87,6 +87,11 @@ class TestDeck < MiniTest::Unit::TestCase
     pass # how could you test this?
   end
 
+  def test_deck_can_deal_cards
+    card = @deck.deal
+    assert_kind_of Card, card
+    assert_equal 51, @deck.length
+  end
 end
 
 class TestBlackjack < MiniTest::Unit::TestCase
