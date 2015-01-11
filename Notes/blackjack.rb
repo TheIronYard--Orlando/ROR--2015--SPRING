@@ -69,4 +69,8 @@ class Player
   def take(card)
     @hand << card
   end
+
+  def hand_value
+    @hand.inject(0){|sum, card| sum + card.value }
+  end
 end

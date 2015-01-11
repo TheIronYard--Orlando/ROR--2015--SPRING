@@ -126,7 +126,8 @@ end
 class TestPlayer < MiniTest::Unit::TestCase
 
   def setup
-    @player = Player.new 
+    cards = [ Card.new(8, :spades), Card.new(6, :clubs)]
+    @player = Player.new(cards) 
   end
 
   def test_player_exists
@@ -142,4 +143,9 @@ class TestPlayer < MiniTest::Unit::TestCase
     @player.take card
     assert @player.hand.include? card
   end
+
+  def test_player_hand_has_value
+    assert_equal 14, @player.hand_value
+  end
+
 end
