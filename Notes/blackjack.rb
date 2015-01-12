@@ -53,7 +53,7 @@ end
 
 class Blackjack
 
-  attr_reader :deck, :player, :dealer, :winner, :push, :current_player
+  attr_reader :player, :dealer, :winner, :push, :current_player
 
   def initialize(deck = nil) # this is a bit of a hack so I can get 
                              # non-random cards to the player and dealer
@@ -68,7 +68,20 @@ class Blackjack
   def display
     "#{player.display}.\n Dealer shows #{dealer.hand[0].display}"
   end
-                 
+  
+  def hit!
+    current_player.take(@deck.next_card) 
+    check_for_bust
+    check_for_winner
+  end
+
+  def stand
+    @current_player = @dealer
+    hit! until @dealer.hand_value >= 17
+  end
+
+  private
+
   def check_for_winner
     if current_player.has_21? 
       if other_player.has_21?
@@ -87,16 +100,6 @@ class Blackjack
     @winner = other_player if current_player.bust?
   end
 
-  def hit!
-    current_player.take(@deck.next_card) 
-    check_for_bust
-    check_for_winner
-  end
-
-  def stand
-    @current_player = @dealer
-    hit! until @dealer.hand_value >= 17
-  end
 end
 
 class Player

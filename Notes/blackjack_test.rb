@@ -101,10 +101,6 @@ class TestBlackjack < MiniTest::Unit::TestCase
     @game = Blackjack.new
   end
 
-  def test_game_has_deck_of_cards
-    assert @game.deck
-  end
-
   def test_game_has_a_player
     assert @game.player
   end
