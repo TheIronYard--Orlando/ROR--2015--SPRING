@@ -84,9 +84,7 @@ class Blackjack
   end
 
   def check_for_bust
-    if current_player.bust?
-      @winner = other_player
-    end
+    @winner = other_player if current_player.bust?
   end
 
   def hit!
@@ -97,7 +95,7 @@ class Blackjack
 
   def stand
     @current_player = @dealer
-    hit!
+    hit! until @dealer.hand_value >= 17
   end
 end
 
