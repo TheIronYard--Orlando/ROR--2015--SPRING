@@ -26,10 +26,8 @@ end
 
 class Deck
 
-  #attr_reader :cards don't need this anymore with methods using @cards
-
-  def initialize
-    @cards = [ :hearts, :diamonds, :clubs, :spades ].map do |suit|
+  def initialize(cards = nil) # hack for same reason as in Blackjack#initialize
+    @cards = cards || [ :hearts, :diamonds, :clubs, :spades ].map do |suit|
       ((2..10).to_a + [ :jack, :queen, :king, :ace ]).map do |value|
         Card.new(value, suit)
       end
@@ -51,12 +49,17 @@ end
 
 class Blackjack
 
-  attr_reader :deck, :player, :dealer
+  attr_reader :deck, :player, :dealer, :winner
 
-  def initialize
-    @deck = Deck.new
+  def initialize(deck = nil) # this is a bit of a hack so I can get 
+                             # non-random cards to the player and dealer
+                             # for tests
+    @deck = deck || Deck.new
     @player = Player.new(@deck.deal(2))
     @dealer = Player.new(@deck.deal(2)) # this works, but a dealer is not exactly a player
+    if @player.has_21? && !@dealer.has_21?
+      @winner = @player
+    end
   end
 
   def display
@@ -87,5 +90,9 @@ class Player
 
   def card_display
     @hand.map{|card| card.display }.join(' and ')
+  end
+
+  def has_21?
+    hand_value == 21
   end
 end

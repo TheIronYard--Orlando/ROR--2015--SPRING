@@ -139,6 +139,14 @@ class TestBlackjack < MiniTest::Unit::TestCase
     assert_equal "#{player_display}.\n Dealer shows #{dealer_card.display}",
                  @game.display
   end
+
+  def test_player_dealt_21_wins_if_dealer_has_less
+    deck = Deck.new([ Card.new(10, :clubs), Card.new(:ace, :hearts),
+                      Card.new(4, :diamonds), Card.new(7, :spades)])
+    game = Blackjack.new(deck)
+    assert_equal game.player, game.winner
+  end
+
 end
 
 
@@ -170,4 +178,5 @@ class TestPlayer < MiniTest::Unit::TestCase
   def test_player_displays_hand
     assert_equal "Player has 8 of Spades and 6 of Clubs", @player.display
   end
+
 end
