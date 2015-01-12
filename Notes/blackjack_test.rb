@@ -45,10 +45,6 @@ class TestCard < MiniTest::Unit::TestCase
     @card = Card.new(2, :hearts)
   end
 
-  def test_card_exists
-    assert @card
-  end
-
   def test_card_has_suit
     assert_equal :hearts, @card.suit
   end
@@ -83,10 +79,6 @@ class TestDeck < MiniTest::Unit::TestCase
     @deck = Deck.new
   end
 
-  def test_deck_exists
-    assert @deck
-  end
-
   def test_deck_has_52_cards
     assert_equal 52, @deck.length
     assert_kind_of Card, @deck[0]
@@ -107,10 +99,6 @@ class TestBlackjack < MiniTest::Unit::TestCase
 
   def setup
     @game = Blackjack.new
-  end
-
-  def test_game_exists
-    assert @game
   end
 
   def test_game_has_deck_of_cards
@@ -161,10 +149,6 @@ class TestPlayer < MiniTest::Unit::TestCase
   def setup
     cards = [ Card.new(8, :spades), Card.new(6, :clubs)]
     @player = Player.new(cards) 
-  end
-
-  def test_player_exists
-    assert @player
   end
 
   def test_player_has_hand
