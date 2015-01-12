@@ -31,6 +31,17 @@ A wolfpack can take down different sized things depending on how big it is.
 
 I used a lot of synonyms there in the hunting section. You don't need methods for all of them.
 
+
+example method uses:
+
+```ruby
+old_wolf.submissive_to?(young_wolf) #=> false
+old_wolf.dominant_over?(young_wolf) #=> true
+pack_of_2_wolves.can_hunt?(:gazelle)   #=> true
+pack_of_10_wolves.can_hunt?(:gazelle) #=> true
+
+wolf.howl #=> 'howwwwl' 
+```
 ### End of Wolfpack
 
 It would be good if you would take what you learn from the above and use it to start on a Deck model for blackjack, because we're not done with blackjack. Ohhhhh, no.
