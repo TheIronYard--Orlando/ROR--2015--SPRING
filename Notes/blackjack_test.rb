@@ -121,7 +121,7 @@ class TestBlackjack < MiniTest::Unit::TestCase
   end 
   
   def test_dealer_starts_with_2_cards_from_deck
-    assert_equal 2, @game.dealer_hand.length
+    assert_equal 2, @game.dealer.hand.length
   end
 end
 

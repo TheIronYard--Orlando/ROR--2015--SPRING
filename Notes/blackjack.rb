@@ -52,12 +52,9 @@ class Blackjack
   def initialize
     @deck = Deck.new
     @player = Player.new(@deck.deal(2))
-    @dealer = @deck.deal(2)
+    @dealer = Player.new(@deck.deal(2)) # this works, but a dealer is not exactly a player
   end
 
-  def dealer_hand
-    @dealer # I'm not at all happy with this method, but it works
-  end
 end
 
 class Player
