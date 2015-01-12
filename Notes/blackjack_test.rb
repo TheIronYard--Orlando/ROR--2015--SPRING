@@ -147,6 +147,12 @@ class TestBlackjack < MiniTest::Unit::TestCase
     assert_equal game.player, game.winner
   end
 
+  def test_player_dealt_21_wins_if_dealer_has_same
+    deck = Deck.new([ Card.new(10, :clubs), Card.new(:ace, :hearts),
+                      Card.new(10, :diamonds), Card.new(:ace, :spades)])
+    game = Blackjack.new(deck)
+    assert game.push
+  end
 end
 
 
