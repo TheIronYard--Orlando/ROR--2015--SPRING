@@ -18,6 +18,10 @@ class Card
       10
     end
   end
+
+  def display
+    "#{@value} of #{suit.to_s.capitalize}"
+  end
 end
 
 class Deck

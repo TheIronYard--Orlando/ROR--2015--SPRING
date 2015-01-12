@@ -66,6 +66,10 @@ class TestCard < MiniTest::Unit::TestCase
     ace = Card.new(:ace, :spades)
     assert_equal 11, ace.value
   end
+
+  def test_numbered_card_displays_its_suit_and_value
+    assert_equal "2 of Hearts", @card.display
+  end
 end
 
 class TestDeck < MiniTest::Unit::TestCase
