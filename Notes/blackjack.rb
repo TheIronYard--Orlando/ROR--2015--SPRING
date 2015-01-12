@@ -34,7 +34,7 @@ class Deck
     end.flatten.shuffle
   end
 
-  def length
+  def size
     @cards.length
   end
 
@@ -72,6 +72,10 @@ class Blackjack
         @winner = @player
       end
     end
+  end
+
+  def hit!
+    @player.take(@deck.deal(1))
   end
 end
 

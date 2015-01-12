@@ -80,7 +80,7 @@ class TestDeck < MiniTest::Unit::TestCase
   end
 
   def test_deck_has_52_cards
-    assert_equal 52, @deck.length
+    assert_equal 52, @deck.size
     assert_kind_of Card, @deck[0]
   end
 
@@ -91,7 +91,7 @@ class TestDeck < MiniTest::Unit::TestCase
   def test_deck_can_deal_cards
     cards = @deck.deal(2)
     assert_kind_of Card, cards[0]
-    assert_equal 50, @deck.length
+    assert_equal 50, @deck.size
   end
 end
 
@@ -114,11 +114,11 @@ class TestBlackjack < MiniTest::Unit::TestCase
   end
 
   def test_player_starts_with_2_cards_from_deck
-    assert_equal 2, @game.player.hand.length
+    assert_equal 2, @game.player.hand.size
   end 
   
   def test_dealer_starts_with_2_cards_from_deck
-    assert_equal 2, @game.dealer.hand.length
+    assert_equal 2, @game.dealer.hand.size
   end
 
   def test_game_can_display_player_cards_and_1_of_dealers
@@ -140,6 +140,11 @@ class TestBlackjack < MiniTest::Unit::TestCase
                       Card.new(10, :diamonds), Card.new(:ace, :spades)])
     game = Blackjack.new(deck)
     assert game.push
+  end
+
+  def test_hit_gives_a_card_to_the_player
+    @game.hit!
+    assert_equal 3, @game.player.hand.size
   end
 end
 
