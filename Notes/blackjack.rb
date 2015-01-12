@@ -59,6 +59,10 @@ class Blackjack
     @dealer = Player.new(@deck.deal(2)) # this works, but a dealer is not exactly a player
   end
 
+  def display
+    "#{player.display}.\n Dealer shows #{dealer.hand[0].display}"
+  end
+                 
 end
 
 class Player
@@ -75,5 +79,13 @@ class Player
 
   def hand_value
     @hand.inject(0){|sum, card| sum + card.value }
+  end
+
+  def display
+    "Player has #{card_display}"
+  end
+
+  def card_display
+    @hand.map{|card| card.display }.join(' and ')
   end
 end

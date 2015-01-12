@@ -133,10 +133,12 @@ class TestBlackjack < MiniTest::Unit::TestCase
     assert_equal 2, @game.dealer.hand.length
   end
 
-  #def test_game_can_display_player_cards_and_1_of_dealers
-  # I realized this should be possible, but then realized
-  # I don't have a test to get a single card to display yet
-  #end
+  def test_game_can_display_player_cards_and_1_of_dealers
+    player_display = @game.player.display
+    dealer_card = @game.dealer.hand[0]
+    assert_equal "#{player_display}.\n Dealer shows #{dealer_card.display}",
+                 @game.display
+  end
 end
 
 
@@ -165,4 +167,7 @@ class TestPlayer < MiniTest::Unit::TestCase
     assert_equal 14, @player.hand_value
   end
 
+  def test_player_displays_hand
+    assert_equal "Player has 8 of Spades and 6 of Clubs", @player.display
+  end
 end
