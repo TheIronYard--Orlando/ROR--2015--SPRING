@@ -57,6 +57,14 @@ class Blackjack
     @deck = deck || Deck.new
     @player = Player.new(@deck.deal(2))
     @dealer = Player.new(@deck.deal(2)) # this works, but a dealer is not exactly a player
+    check_for_winner
+  end
+
+  def display
+    "#{player.display}.\n Dealer shows #{dealer.hand[0].display}"
+  end
+                 
+  def check_for_winner
     if @player.has_21? 
       if @dealer.has_21?
         @push = true
@@ -65,11 +73,6 @@ class Blackjack
       end
     end
   end
-
-  def display
-    "#{player.display}.\n Dealer shows #{dealer.hand[0].display}"
-  end
-                 
 end
 
 class Player
