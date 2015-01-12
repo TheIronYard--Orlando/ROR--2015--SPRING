@@ -45,6 +45,10 @@ class Deck
   def deal(n)
     @cards.shift(n)
   end
+
+  def next_card
+    @cards.shift
+  end
 end
 
 class Blackjack
@@ -81,16 +85,13 @@ class Blackjack
   end
 
   def hit!
-    @player.take(@deck.deal(1).pop) 
-    # the pop is strange. It's there because of Deck#deal, which uses Array#shift.
-    # #shift, with no arguments, returns the first element of an array.
-    # so #shift, with no arguments, would work great for getting a card from the deck.
-    # then the player could #take a card. But I wrote #deal to have an argument,
-    # to account for the initial deal of 2 cards per player.
-    # and #shift(n) always returns an array. Even #shift(1)! So I have to @deck.deal(1)
-    # to get a single - element array, and then #pop to get the element out. Blech.
+    @player.take(@deck.next_card) 
     check_for_bust
     check_for_winner
+  end
+
+  def stand
+    @dealer.take(@deck.next_card)
   end
 end
 

@@ -165,6 +165,15 @@ class TestBlackjack < MiniTest::Unit::TestCase
     assert_equal game.player, game.winner
   end
 
+  def test_dealer_gets_cards_after_player_stands
+    deck = Deck.new([ Card.new(10, :clubs), Card.new(5, :hearts),
+                      Card.new(2, :hearts), Card.new(3, :clubs),
+                      Card.new(6, :diamonds)])
+    game = Blackjack.new(deck)
+    game.stand
+    assert game.dealer.hand.length > 2
+  end
+
 end
 
 
