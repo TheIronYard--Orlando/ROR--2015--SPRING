@@ -106,4 +106,8 @@ class Player
   def has_21?
     hand_value == 21
   end
+
+  def bust?
+    hand_value > 21
+  end
 end

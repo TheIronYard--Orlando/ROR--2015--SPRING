@@ -174,4 +174,8 @@ class TestPlayer < MiniTest::Unit::TestCase
     assert_equal "Player has 8 of Spades and 6 of Clubs", @player.display
   end
 
+  def test_player_busts_with_hand_valued_over_21
+    @player.take Card.new(8, :hearts)
+    assert @player.bust?
+  end
 end
