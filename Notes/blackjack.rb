@@ -61,9 +61,7 @@ class Player
 
   attr_reader :hand # yes, reader, even though I'll change it during the game
 
-  def initialize(cards = []) # default value just a placeholder bc I
-                             # lazily don't want to change Player.new
-                             # in tests
+  def initialize(cards = [])
     @hand = cards 
   end
 

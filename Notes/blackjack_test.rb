@@ -123,6 +123,11 @@ class TestBlackjack < MiniTest::Unit::TestCase
   def test_dealer_starts_with_2_cards_from_deck
     assert_equal 2, @game.dealer.hand.length
   end
+
+  #def test_game_can_display_player_cards_and_1_of_dealers
+  # I realized this should be possible, but then realized
+  # I don't have a test to get a single card to display yet
+  #end
 end
 
 
