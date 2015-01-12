@@ -155,6 +155,16 @@ class TestBlackjack < MiniTest::Unit::TestCase
     game.hit!
     assert_equal game.dealer, game.winner
   end 
+
+  def test_player_wins_with_21_after_3_cards_if_dealer_has_less
+    deck = Deck.new([ Card.new(10, :clubs), Card.new(5, :hearts),
+                      Card.new(2, :hearts), Card.new(3, :clubs),
+                      Card.new(6, :diamonds)])
+    game = Blackjack.new(deck)
+    game.hit!
+    assert_equal game.player, game.winner
+  end
+
 end
 
 

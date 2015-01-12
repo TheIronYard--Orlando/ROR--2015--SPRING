@@ -90,6 +90,7 @@ class Blackjack
     # and #shift(n) always returns an array. Even #shift(1)! So I have to @deck.deal(1)
     # to get a single - element array, and then #pop to get the element out. Blech.
     check_for_bust
+    check_for_winner
   end
 end
 
