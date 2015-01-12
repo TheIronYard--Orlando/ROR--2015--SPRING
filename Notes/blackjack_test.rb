@@ -146,6 +146,15 @@ class TestBlackjack < MiniTest::Unit::TestCase
     @game.hit!
     assert_equal 3, @game.player.hand.size
   end
+
+  def test_dealer_wins_if_player_busts
+    deck = Deck.new([ Card.new(10, :clubs), Card.new(:jack, :hearts),
+                      Card.new(2, :hearts), Card.new(3, :clubs),
+                      Card.new(10, :diamonds)])
+    game = Blackjack.new(deck)
+    game.hit!
+    assert_equal game.dealer, game.winner
+  end 
 end
 
 
