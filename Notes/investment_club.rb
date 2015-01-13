@@ -18,8 +18,8 @@ class InvestmentClub
     @location = new_location
   end
 =end
-  def initialize(members, location)
-    @members = members
+  def initialize(applicants, location)
+    @members = applicants.select{|applicant| applicant.is_a?(Mogul) }
     @location = location
   end
 end

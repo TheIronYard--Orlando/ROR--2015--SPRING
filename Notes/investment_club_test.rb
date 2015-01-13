@@ -21,4 +21,16 @@ class InvestmentClubTest < MiniTest::Unit::TestCase
     assert_equal @members, @investment_club.members
   end
 
+  def test_member_is_a_mogul
+    assert @investment_club.members[0].is_a?(Mogul)
+  end
+
+  def test_club_only_allows_moguls_as_members
+    brian = "Brian Gates"
+    bill = Mogul.new("Bill Gates", 48)
+    ted = Mogul.new("Ted Turner", 13)
+    members = [ brian, bill, ted ]
+    club_with_sketchy_applicant = InvestmentClub.new(members, "Canvs")
+    assert_equal 2, club_with_sketchy_applicant.members.length
+  end
 end
