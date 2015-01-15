@@ -33,10 +33,14 @@ class HouseTest < MiniTest::Unit::TestCase
     assert blue_house.has_2_matching_rooms?
   end
 
+  def test_house_might_not_have_2_matching_rooms
+    assert_equal false, @house.has_2_matching_rooms?
+  end
+  
   def test_house_can_have_no_matching_bedrooms
     assert @house.has_no_matching_rooms?
   end
-  
+
   def test_house_with_2_matching_bedrooms_better_than_no_matching_bedrooms
 
   end
