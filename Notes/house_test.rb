@@ -10,7 +10,6 @@
 
 require 'minitest/autorun'
 require './house'
-require './bedroom'
 
 class HouseTest < MiniTest::Unit::TestCase
 
@@ -21,5 +20,24 @@ class HouseTest < MiniTest::Unit::TestCase
 
   def test_house_has_bedrooms
     assert @house.bedrooms
+  end
+
+  def test_house_has_master_bedroom
+    assert_equal 600, @house.master_bedroom.size
+  end
+
+  def test_house_can_have_2_matching_bedrooms
+    blue_room_1 = Bedroom.new("blue", 500)
+    blue_room_2 = Bedroom.new("blue", 760)
+    blue_house = House.new([blue_room_1, blue_room_2])
+    assert blue_house.has_2_matching_rooms?
+  end
+
+  def test_house_can_have_no_matching_bedrooms
+    assert @house.has_no_matching_rooms?
+  end
+  
+  def test_house_with_2_matching_bedrooms_better_than_no_matching_bedrooms
+
   end
 end
