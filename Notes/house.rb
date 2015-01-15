@@ -1,6 +1,8 @@
 require './bedroom'
 class House
 
+  include Comparable
+  
   attr_reader :bedrooms
 
   def initialize(bedrooms)
@@ -22,4 +24,17 @@ class House
     unique_colors = all_colors.uniq
     all_colors.size == unique_colors.size
   end
+
+  def <=>(other_house)
+    awesomeness <=> other_house.awesomeness
+  end
+
+  def awesomeness
+    if has_2_matching_rooms?
+      1000
+    else has_no_matching_rooms?
+      1
+    end
+  end
+
 end

@@ -45,8 +45,8 @@ class HouseTest < MiniTest::Unit::TestCase
   def test_house_might_not_have_no_matching_bedrooms
     refute @blue_house.has_no_matching_rooms?
   end
-  
-  def test_house_with_2_matching_bedrooms_better_than_no_matching_bedrooms
 
+  def test_house_with_2_matching_bedrooms_better_than_no_matching_bedrooms
+    assert @blue_house > @house
   end
 end
