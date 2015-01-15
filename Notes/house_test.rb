@@ -16,6 +16,10 @@ class HouseTest < MiniTest::Unit::TestCase
   def setup
     bedrooms = [ Bedroom.new("blue", 600), Bedroom.new('off white', 500), Bedroom.new('fuschia', 525)]
     @house = House.new(bedrooms)
+
+    blue_room_1 = Bedroom.new("blue", 500)
+    blue_room_2 = Bedroom.new("blue", 760)
+    @blue_house = House.new([blue_room_1, blue_room_2])
   end
 
   def test_house_has_bedrooms
@@ -27,20 +31,21 @@ class HouseTest < MiniTest::Unit::TestCase
   end
 
   def test_house_can_have_2_matching_bedrooms
-    blue_room_1 = Bedroom.new("blue", 500)
-    blue_room_2 = Bedroom.new("blue", 760)
-    blue_house = House.new([blue_room_1, blue_room_2])
-    assert blue_house.has_2_matching_rooms?
+    assert @blue_house.has_2_matching_rooms?
   end
 
   def test_house_might_not_have_2_matching_rooms
-    assert_equal false, @house.has_2_matching_rooms?
+    refute @house.has_2_matching_rooms?
   end
-  
+
   def test_house_can_have_no_matching_bedrooms
     assert @house.has_no_matching_rooms?
   end
 
+  def test_house_might_not_have_no_matching_bedrooms
+    refute @blue_house.has_no_matching_rooms?
+  end
+  
   def test_house_with_2_matching_bedrooms_better_than_no_matching_bedrooms
 
   end
