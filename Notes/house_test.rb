@@ -10,11 +10,13 @@
 
 require 'minitest/autorun'
 require './house'
+require './bedroom'
 
 class HouseTest < MiniTest::Unit::TestCase
 
   def setup
-    @house = House.new()
+    bedrooms = [ Bedroom.new("blue", 600), Bedroom.new('off white', 500), Bedroom.new('fuschia', 525)]
+    @house = House.new(bedrooms)
   end
 
   def test_house_has_bedrooms

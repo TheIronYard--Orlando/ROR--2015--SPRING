@@ -1,8 +1,9 @@
 class Bedroom
 
-  attr_reader :color
-  
-  def initialize(color)
+  attr_reader :color, :size
+
+  def initialize(color, size)
     @color = color
+    @size = size
   end
 end
