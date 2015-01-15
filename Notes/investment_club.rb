@@ -22,4 +22,8 @@ class InvestmentClub
     @members = applicants.select{|applicant| applicant.is_a?(Mogul) }
     @location = location
   end
+
+  def president
+    @members.max_by{|member| member.net_worth }
+  end
 end
