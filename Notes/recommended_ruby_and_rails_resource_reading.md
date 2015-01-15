@@ -22,3 +22,5 @@ Just stumbled across this nice discussion of some stuff we were doing this week.
 * [Code Wars](http://codewars.com) This is a neat source of small-to-midsized coding challenges. 
 The best part of the site is reading through the comments on each problem (after you solve it) 
 to see the other solutions people have come up with.
+
+* [Practicing Ruby](https://practicingruby.com/articles/growing-a-stable-codebase) isn't purely an intro site, but this particular article is pretty accessible, and reinforces some stuff we've discussed.
