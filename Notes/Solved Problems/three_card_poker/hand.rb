@@ -59,7 +59,8 @@ class Hand
   end
 
   def less_than_queen_high?
-    value < 13 #not 12 bc I'm adding middle_card_value
+    value < 12 #no, it does need to be 12; but I need to change value_as_high_card_hand to make sure
+               #no jack high hand can have value > 12.
   end
 
   private
@@ -81,6 +82,6 @@ class Hand
   end
 
   def value_as_high_card_hand
-    high_card.value + 0.1 * middle_card_value + 0.01 * low_card_value
+    high_card.value + 0.01 * middle_card_value + 0.0001 * low_card_value
   end
 end

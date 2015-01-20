@@ -36,14 +36,22 @@ class PokerTest < MiniTest::Unit::TestCase
     assert @game.ante_bet
   end
 
-  def dealer_hand
+  def crap_dealer_hand
     Hand.new([Card.new(:jack, :spades), Card.new(8, :hearts), Card.new(2, :clubs)])
+  end
+
+  def queen_high_hand
+    Hand.new([Card.new(:queen, :spades), Card.new(8, :hearts), Card.new(2, :clubs)])
+  end
+
+  def pair
+    Hand.new([Card.new(2, :hearts), Card.new(2, :diamonds), Card.new(3, :spades)])
   end
 
   def test_game_shows_player_hand #note that I don't need a deck here at all - why?
     player_hand = Hand.new([Card.new(7, :spades), Card.new(9, :clubs), Card.new(4, :hearts)])
     expected_output = "Player has seven of spades, nine of clubs, four of hearts\n"
-    assert_output(expected_output) { Poker.new(10, player_hand, dealer_hand) }
+    assert_output(expected_output) { Poker.new(10, player_hand, crap_dealer_hand) }
   end
 
   # after showing the player's hand, the player can make a play bet, which is equal to the ante bet
@@ -59,9 +67,19 @@ class PokerTest < MiniTest::Unit::TestCase
 
   # If the dealer does not have Queen high or better, the ante bet is paid even money and the play bet is returned.
   def test_ante_bet_pays_off_if_dealer_worse_than_queen_high
-    game = Poker.new(10, @player, dealer_hand)
-    expected_output = "SHOWDOWN! Dealer has jack of spades, eight of hearts, two of clubs/n" +
+    game = Poker.new(10, @player, crap_dealer_hand)
+    expected_output = "SHOWDOWN! Dealer has jack of spades, eight of hearts, two of clubs\n" +
                       "You win $20 on the ante bet and $10 on the play bet.\n"
+    assert_output(expected_output) { game.place_play_bet! }
+  end
+
+  # If the dealer does have Queen high or better & the player's hand beats the dealer's hand,
+  # the ante bet and play bet are paid even money.
+  def test_both_bets_pay_if_player_beats_dealer
+    game = Poker.new(30, pair, queen_high_hand)
+    refute queen_high_hand.less_than_queen_high?
+    expected_output = "SHOWDOWN! Dealer has queen of spades, eight of hearts, two of clubs\n" +
+                      "You win $60 on the ante bet and $60 on the play bet.\n"
     assert_output(expected_output) { game.place_play_bet! }
   end
 end
