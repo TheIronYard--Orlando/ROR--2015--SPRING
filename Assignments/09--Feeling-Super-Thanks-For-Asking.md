@@ -40,3 +40,8 @@ If you don't know any HTML right now, you will by tomorrow.
 #### Tasks
 
 You tell me. Whatever they are, they should be the only thing in the description for your issue. Speaking of your issue, the last task will be to solicit thumbsup from two other people, once you're finished. When you're asked to give thumbsup, glance over the checkboxes and the PR to make sure everything that's supposed to be there appears to be. If any big problems jump out at you, don't give thumbsup!
+
+
+#### Note
+
+One last thing - install [XCode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12). You may need to do this at home; I haven't been able to do it with the internet in here.
