@@ -48,4 +48,9 @@ class PokerTest < MiniTest::Unit::TestCase
     @game.place_play_bet!
     assert_equal @game.ante_bet, @game.play_bet
   end
+
+  # other option is for player to fold, in which case the game is over and player loses ante bet
+  def test_player_loses_by_folding
+    assert_output("Player lost 10\n") { @game.fold! }
+  end
 end

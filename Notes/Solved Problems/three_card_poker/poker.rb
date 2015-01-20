@@ -19,4 +19,8 @@ class Poker
   def place_play_bet!
     @play_bet = @ante_bet
   end
+
+  def fold!
+    puts "Player lost #{@ante_bet}"
+  end
 end
