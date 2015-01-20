@@ -2,14 +2,14 @@ require './hand'
 require './deck'
 class Poker
 
-  attr_reader :deck, :player, :dealer, :bet
+  attr_reader :deck, :player, :dealer, :ante_bet
 
-  def initialize(bet, player, dealer)
+  def initialize(ante_bet, player, dealer)
     @deck = Deck.new
     @player = player
     show_player_hand
     @dealer = dealer
-    @bet = bet
+    @ante_bet = ante_bet
   end
 
   def show_player_hand

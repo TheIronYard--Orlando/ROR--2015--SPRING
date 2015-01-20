@@ -32,8 +32,8 @@ class PokerTest < MiniTest::Unit::TestCase
     assert_equal 3, @game.dealer.cards.length
   end
 
-  def test_game_has_bet
-    assert @game.bet
+  def test_game_has_ante_bet
+    assert @game.ante_bet
   end
 
   def test_game_shows_player_hand #note that I don't need a deck here at all - why?
