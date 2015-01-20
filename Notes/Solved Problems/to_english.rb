@@ -44,7 +44,7 @@ class Fixnum
     end
   end
 end
-
+=begin Now that I'm using #to_english in the poker game, the puts get in the way
 puts 0.to_english #=> "zero"
 puts 1.to_english #=> "one"
 puts 2.to_english #=> "two"
@@ -65,3 +65,4 @@ puts 3456.to_english
 puts 10611.to_english
 puts 999999.to_english
 puts 1000000.to_english
+=end
