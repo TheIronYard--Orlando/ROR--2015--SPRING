@@ -107,4 +107,12 @@ class HandTest < MiniTest::Unit::TestCase
     assert straight_flush_hand > three_of_a_kind_hand
   end
 
+  def test_hand_can_be_less_than_queen_high
+    garbage_hand = Hand.new([Card.new(3, :diamonds), Card.new(:jack, :spades), Card.new(5, :clubs)])
+    assert garbage_hand.less_than_queen_high?
+  end
+
+  def test_hand_can_be_more_than_queen_high
+    refute @hand.less_than_queen_high?
+  end
 end

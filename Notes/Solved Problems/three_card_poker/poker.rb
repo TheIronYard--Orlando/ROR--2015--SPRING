@@ -18,6 +18,10 @@ class Poker
 
   def place_play_bet!
     @play_bet = @ante_bet
+    if @dealer.less_than_queen_high? #this method had to be added in hand_test.rb and hand.rb bc I needed it here
+      puts "SHOWDOWN! Dealer has #{@dealer}/n" +
+                      "You win $#{@ante_bet * 2} on the ante bet and $#{@play_bet} on the play bet."
+    end
   end
 
   def fold!

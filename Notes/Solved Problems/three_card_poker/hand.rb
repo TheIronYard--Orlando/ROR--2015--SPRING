@@ -58,6 +58,10 @@ class Hand
     end
   end
 
+  def less_than_queen_high?
+    value < 13 #not 12 bc I'm adding middle_card_value
+  end
+
   private
 
   def card_values
