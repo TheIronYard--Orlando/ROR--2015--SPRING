@@ -36,4 +36,10 @@ class PokerTest < MiniTest::Unit::TestCase
     assert @game.bet
   end
 
+  def test_game_shows_player_hand #note that I don't need a deck here at all - why?
+    player_hand = Hand.new([Card.new(7, :spades), Card.new(9, :clubs), Card.new(4, :hearts)])
+    dealer_hand = Hand.new([Card.new(:jack, :spades), Card.new(8, :hearts), Card.new(2, :clubs)])
+    expected_output = "Player has seven of spades, nine of clubs, four of hearts\n"
+    assert_output(expected_output) { Poker.new(10, player_hand, dealer_hand) }
+  end
 end

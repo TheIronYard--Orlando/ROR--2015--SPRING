@@ -9,7 +9,7 @@ class Hand
   end
 
   def to_s
-    @cards.map{|card| card.to_s }.join(', ')
+    @cards.map{|card| "#{card}" }.join(', ')
   end
 
   def high_card

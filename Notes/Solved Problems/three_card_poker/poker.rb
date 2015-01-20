@@ -7,9 +7,9 @@ class Poker
   def initialize(bet, player, dealer)
     @deck = Deck.new
     @player = player
+    show_player_hand
     @dealer = dealer
     @bet = bet
-    show_player_hand
   end
 
   def show_player_hand
