@@ -2,7 +2,7 @@ require './hand'
 require './deck'
 class Poker
 
-  attr_reader :deck, :player, :dealer, :ante_bet
+  attr_reader :deck, :player, :dealer, :ante_bet, :play_bet
 
   def initialize(ante_bet, player, dealer)
     @deck = Deck.new
@@ -14,5 +14,9 @@ class Poker
 
   def show_player_hand
     puts "Player has #{@player}"
+  end
+
+  def place_play_bet!
+    @play_bet = @ante_bet
   end
 end

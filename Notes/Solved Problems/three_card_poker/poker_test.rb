@@ -44,7 +44,8 @@ class PokerTest < MiniTest::Unit::TestCase
   end
 
   # after showing the player's hand, the player can make a play bet, which is equal to the ante bet
-  def test_player_can_make_bet
-    # this is going to involve a second bet, which means the thing I named "bet" makes less sense
+  def test_player_can_make_play_bet
+    @game.place_play_bet!
+    assert_equal @game.ante_bet, @game.play_bet
   end
 end
