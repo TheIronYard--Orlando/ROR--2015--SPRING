@@ -42,4 +42,9 @@ class PokerTest < MiniTest::Unit::TestCase
     expected_output = "Player has seven of spades, nine of clubs, four of hearts\n"
     assert_output(expected_output) { Poker.new(10, player_hand, dealer_hand) }
   end
+
+  # after showing the player's hand, the player can make a play bet, which is equal to the ante bet
+  def test_player_can_make_bet
+    # this is going to involve a second bet, which means the thing I named "bet" makes less sense
+  end
 end
