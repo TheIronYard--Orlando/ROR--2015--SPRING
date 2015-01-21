@@ -8,11 +8,13 @@ We'll start simple(-ish) with the Ruby/HTML constructs, and build up. First thin
 
 ```ruby
 <img src="/path/to/queen/of/hearts.svg">
+```
 
 you can just write
 
 ```ruby
 <%= @queen_of_hearts.to_img %>
+```
 
 Make sure to write tests for the method first!
 
