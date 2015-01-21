@@ -64,6 +64,7 @@ After completing this assignment, you will be pretty comfortable mixing Ruby int
 * Comments on your _WIP Issue_ for the following:
     * a link to your wiki (absolute URL)
     * a link to your PR using _Github Flavored Markdown_
+    
 ### Requirements
 
 #### Tasks
