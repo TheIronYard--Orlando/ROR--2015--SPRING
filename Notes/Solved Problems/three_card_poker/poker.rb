@@ -26,6 +26,8 @@ class Poker
         puts "#{showdown}You win $#{@ante_bet * 2} on the ante bet and $#{@play_bet * 2} on the play bet."
       elsif @player == @dealer
         puts "#{showdown}You win $#{@ante_bet} on the ante bet and $#{@play_bet} on the play bet."
+      else
+        puts "#{showdown}You lose!"
       end
     end
   end

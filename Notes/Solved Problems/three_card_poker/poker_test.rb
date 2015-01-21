@@ -91,4 +91,13 @@ class PokerTest < MiniTest::Unit::TestCase
                       "You win $20 on the ante bet and $20 on the play bet.\n"
     assert_output(expected_output) { game.place_play_bet! }
   end
+
+  # If the dealer does have Queen high or better & the player's hand is worse than the dealer's hand,
+  # the ante and play bet are lost.
+  def test_bets_lost_if_dealer_with_queen_high_beats_player
+    game = Poker.new(20, queen_high_hand, pair)
+    expected_output = "SHOWDOWN! Dealer has two of hearts, two of diamonds, three of spades\n" +
+                      "You lose!\n"
+    assert_output(expected_output) { game.place_play_bet! }
+  end
 end
