@@ -77,9 +77,18 @@ class PokerTest < MiniTest::Unit::TestCase
   # the ante bet and play bet are paid even money.
   def test_both_bets_pay_if_player_beats_dealer
     game = Poker.new(30, pair, queen_high_hand)
-    refute queen_high_hand.less_than_queen_high?
     expected_output = "SHOWDOWN! Dealer has queen of spades, eight of hearts, two of clubs\n" +
                       "You win $60 on the ante bet and $60 on the play bet.\n"
+    assert_output(expected_output) { game.place_play_bet! }
+  end
+
+  # If the dealer does have Queen high or better & the player's hand is equal to the dealer's hand,
+  # the player's ante and play bets are returned.
+  def test_bets_return_if_player_ties_with_dealer
+    dealer_pair = Hand.new([Card.new(2, :spades), Card.new(2, :clubs), Card.new(3, :diamonds)])
+    game = Poker.new(20, pair, dealer_pair) 
+    expected_output = "SHOWDOWN! Dealer has two of spades, two of clubs, three of diamonds\n" +
+                      "You win $20 on the ante bet and $20 on the play bet.\n"
     assert_output(expected_output) { game.place_play_bet! }
   end
 end
