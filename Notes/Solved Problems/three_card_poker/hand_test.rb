@@ -18,7 +18,7 @@ class HandTest < MiniTest::Unit::TestCase
   end
 
   def test_hand_can_be_displayed
-    display_string = "three of clubs, four of hearts, ace of spades"
+    display_string = "Three of Clubs, Four of Hearts, Ace of Spades"
     assert_equal display_string, @hand.to_s
   end
 
@@ -75,6 +75,21 @@ class HandTest < MiniTest::Unit::TestCase
     refute @hand.straight_flush?
   end
 
+  # I want to see "Straight Flush!" if the hand is a straight flush
+  def test_display_hand_type
+    assert_equal "Straight Flush!", straight_flush_hand.type
+  end
+
+  # I want to see "Three of a kind!" if the hand etc etc
+  def test_display_three_of_a_kind_type
+    assert_equal "Three of a kind!", three_of_a_kind_hand.type
+  end
+
+  # I want to see "Straight!" if...
+  def test_display_straight_type
+    assert_equal "Straight!", straight_hand.type
+  end
+  
   def test_ace_high_beats_king_high
     king_of_clubs = Card.new(:king, :clubs)
     king_high = Hand.new([@two_of_hearts, @four_of_hearts, king_of_clubs])

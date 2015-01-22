@@ -1,4 +1,4 @@
-require './card'
+require_relative 'card'
 class Deck
 
   def initialize
@@ -11,5 +11,16 @@ class Deck
 
   def deal(n)
     @cards.shift(n)
+  end
+
+  def method_missing(method_name)
+    if method_name =~ /(.*)_of_(.*)/
+      @cards.detect do |card| 
+        [card.string_value, card.face_value.to_s.downcase].include?($1) && 
+        card.suit.to_s == $2
+      end
+    else
+      super
+    end
   end
 end

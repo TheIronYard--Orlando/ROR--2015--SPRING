@@ -1,8 +1,8 @@
-require '../to_english'
+require_relative '../to_english'
 class Card
   include Comparable
 
-  attr_reader :value, :suit
+  attr_reader :suit
 
   def initialize(value, suit)
     @value = value
@@ -10,7 +10,7 @@ class Card
   end
 
   def to_s
-    "#{string_value} of #{@suit}"
+    "#{string_value.capitalize} of #{capitalized_suit}"
   end
 
   def string_value
@@ -36,4 +36,33 @@ class Card
     end
   end
 
+  def capitalized_suit
+    suit.to_s.capitalize
+  end
+
+  def initial
+    capitalized_suit.split('')[0]
+  end
+
+  def to_img
+    "<img src=\"card_images/#{capitalized_suit}/#{abbr_face_value}#{initial}.svg\">"
+  end
+
+  def face_value
+    if @value.is_a?(Fixnum)
+      @value
+    else
+      @value.to_s.capitalize
+    end
+  end
+  
+  def abbr_face_value
+    if @value.is_a?(Fixnum)
+      @value
+    else
+      #if @value is a symbol, turn it to string, then capitalize, 
+      #then get 1st letter
+      @value.to_s.capitalize.split('')[0]
+    end
+  end
 end

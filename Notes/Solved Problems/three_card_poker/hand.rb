@@ -1,4 +1,4 @@
-require './card'
+require_relative 'card'
 class Hand
   include Comparable
 
@@ -55,6 +55,22 @@ class Hand
       10 * paired_value
     else
       value_as_high_card_hand
+    end
+  end
+
+  def type
+    if straight_flush?
+      "Straight Flush!"
+    elsif three_of_a_kind?
+      "Three of a kind!"
+    elsif is_straight?
+      "Straight!"
+    elsif is_flush?
+      "Flush!"
+    elsif has_pair?
+      "Pair"
+    else
+      "#{high_card.face_value} high"
     end
   end
 

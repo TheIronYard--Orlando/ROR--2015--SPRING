@@ -16,11 +16,11 @@ class CardTest < MiniTest::Unit::TestCase
   end
 
   def test_card_can_be_displayed
-    assert_equal "seven of hearts", @seven_of_hearts.to_s
+    assert_equal "Seven of Hearts", @seven_of_hearts.to_s
   end
 
   def test_face_card_can_be_displayed
-    assert_equal "ace of spades", @ace_of_spades.to_s
+    assert_equal "Ace of Spades", @ace_of_spades.to_s
   end
 
   def test_cards_are_comparable
@@ -32,4 +32,23 @@ class CardTest < MiniTest::Unit::TestCase
     assert jack_of_hearts < @ace_of_spades
   end
 
+  # I need to get numbered cards to give me a number,
+  # but face cards or aces to give me a letter
+  def test_numbered_card_has_face_value
+    assert_equal 7, @seven_of_hearts.face_value
+  end
+
+  def test_face_card_has_face_value
+    assert_equal 'A', @ace_of_spades.face_value
+  end
+
+  #I want to get the 1st letter from the suit name, capitalized
+  def test_card_has_initial
+    assert_equal 'H', @seven_of_hearts.initial
+  end
+
+  #I want to display the card as an image (img tag in html)
+  def test_card_will_display_as_image
+    assert_equal '<img src="card_images/Hearts/7H.svg">', @seven_of_hearts.to_img
+  end
 end
