@@ -35,6 +35,8 @@ Next, method writing time. Try to get the effect of each of these in the console
 * Define a method `Team#division_leader?` that checks whether a team has more wins than any other team in its (conference and) division
 * Define a method `Team#division_winner?` that checks whether a team leads its division and all its division rivals have played 16 games
 
+I also want to start incorporating a bit of HTML/CSS a few times a week. I added a html/folder with a `step_1.html` file and a `step_1_after.png`. Add a CSS file, linked to the HTML file, to make the HTML file look like the PNG. You will need to add style to the html element, the body, and the h1 tag, but you won't need to add any extra tags.
+
 ## Objectives
 
 ### Learning Objectives
@@ -51,6 +53,7 @@ You will be able to reproduce SQL queries with the ActiveRecord interface, and e
 * a `nfl_queries.sql` file listing the SQL queries you wrote 
 * a `nfl_queries.rb` file listing the ActiveRecord queries you wrote
 * `city.rb` and `team.rb` files with methods defined as described above
+* include your `step_1.html` and `step_1.css` in the same folder. That's awkward, but a better process hasn't occurred to me yet.
 
 #### Tasks
 
