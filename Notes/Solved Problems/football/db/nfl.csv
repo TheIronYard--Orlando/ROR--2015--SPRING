@@ -1,0 +1,40 @@
+City,Team,W,L,T,Division,Conference,Playoff,city_id
+Boston,Patriots,12,4,0,East,AFC,TRUE,24
+Buffalo,Bills,9,7,0,East,AFC,FALSE,73
+Miami,Dolphins,8,8,0,East,AFC,FALSE,44
+New York,Jets,4,12,0,East,AFC,FALSE,1
+,,,,,,,,
+Pittsburgh,Steelers,11,5,0,North,AFC,TRUE,62
+Cincinnati,Bengals,10,5,1,North,AFC,TRUE,65
+Baltimore,Ravens,10,6,0,North,AFC,TRUE,26
+Cleveland,Browns,7,9,0,North,AFC,FALSE,48
+,,,,,,,,
+Indianapolis,Colts,11,5,0,South,AFC,TRUE,12
+Houson,Texans,9,7,0,South,AFC,FALSE,4
+Jacksonville,Jaguars,3,13,0,South,AFC,FALSE,13
+Nashville,Titans,2,14,0,South,AFC,FALSE,25
+,,,,,,,,
+Denver,Broncos,12,4,0,West,AFC,TRUE,22
+Kansas City,Chiefs,9,7,0,West,AFC,FALSE,37
+San Diego,Chargers,9,7,0,West,AFC,FALSE,8
+Oakland,Raiders,3,13,0,West,AFC,FALSE,45
+,,,,,,,,
+Dallas,Cowboys,12,4,0,East,NFC,TRUE,9
+Philadelphia,Eagles,10,6,0,East,NFC,FALSE,5
+New York,Giants,6,10,0,East,NFC,FALSE,1
+Washington,Redskins,4,12,0,East,NFC,FALSE,23
+,,,,,,,,
+Green Bay,Packers,12,4,0,North,NFC,TRUE,272
+Detroit,Lions,11,5,0,North,NFC,TRUE,18
+Minneapolis,Vikings,7,9,0,North,NFC,FALSE,46
+Chicago,Bears,5,11,0,North,NFC,FALSE,3
+,,,,,,,,
+Charlotte,Panthers,7,8,1,South,NFC,TRUE,16
+New Orleans,Saints,7,9,0,South,NFC,FALSE,51
+Atlanta,Falcons,6,10,0,South,NFC,FALSE,40
+Tampa,Buccaneers,2,14,0,South,NFC,FALSE,53
+,,,,,,,,
+Seattle,Seahawks,12,4,0,West,NFC,TRUE,21
+Phoenix,Cardinals,11,5,0,West,NFC,TRUE,6
+San Francisco,49ers,8,8,0,West,NFC,FALSE,14
+Saint Louis,Rams,6,10,0,West,NFC,FALSE,58
