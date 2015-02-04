@@ -8,7 +8,7 @@ I gave a lot of reading material through HipChat:
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Forms_in_HTML
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Forms
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Element
-* https://developer.mozilla.org/en-US/docs/Web/HTML/Block_level_elements
+* https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
 
 I also posted a list of all the tags available in HTML5. You are now in position to use some of those tags to tidy up the views in the app.
 
