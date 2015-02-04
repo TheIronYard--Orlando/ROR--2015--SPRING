@@ -5,7 +5,7 @@
 We have a lot of text just hanging out in the restaurant review app at this point. It should be wrapped in some tags for better semantics (that is, so the structure of the HTML document matches the content better).
 
 I gave a lot of reading material through HipChat:
-* https://developer.mozilla.org/en-US/docs/Web/HTML/Forms_\in_HTML
+* https://developer.mozilla.org/en-US/docs/Web/HTML/Forms_in_HTML
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Forms
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 * https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
