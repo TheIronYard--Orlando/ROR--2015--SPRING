@@ -12,7 +12,7 @@ The functionality should follow the [spec](https://github.com/tastejs/todomvc/bl
 * _Persistence_ - SQLite
 * _Routing_ in Rails
 
-You can make use of the HTML in their [template](https://github.com/tastejs/todomvc-app-template/index.html) and the CSS in the [template for that](https://github.com/tastejs/todomvc-app-css/blob/master/index.css). Use Rails helper methods wherever possible (in the form, for example).
+You can make use of the HTML in their [template](https://github.com/tastejs/todomvc-app-template/blob/master/index.html) and the CSS in the [template for that](https://github.com/tastejs/todomvc-app-css/blob/master/index.css). Use Rails helper methods wherever possible (in the form, for example).
 
 This project will have multiple levels of difficulty. 
 
