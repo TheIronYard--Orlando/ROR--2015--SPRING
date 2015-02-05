@@ -5,13 +5,13 @@ As your first assignment, [create a new Issue in the class repo](https://github.
 * [X] Assumed complete ;)
     * [X] [Create a Github account](https://github.com/signup)
     * [X] [Star the class project](https://github.com/TheIronYard--Orlando/ROR--2015--SPRING)
-* [ ] [Edit your Github profile](https://github.com/settings/profile) to provide:
-    * [ ] A picture, so I can recognize your face.
-    * [ ] Your full name, so I can recognize your name.
-    * [ ] A valid public email address, so I can contact you if I need to.
-* [ ] Read the `README.md` files in:
-    * [ ] [Assignments](https://github.com/TheIronYard--Orlando/ROR--2015--SPRING/tree/master/Assignments)
-    * [ ] [Notes](https://github.com/TheIronYard--Orlando/ROR--2015--SPRING/tree/master/Notes)
+* [X] [Edit your Github profile](https://github.com/settings/profile) to provide:
+    * [X] A picture, so I can recognize your face.
+    * [X] Your full name, so I can recognize your name.
+    * [X] A valid public email address, so I can contact you if I need to.
+* [X] Read the `README.md` files in:
+    * [X] [Assignments](https://github.com/TheIronYard--Orlando/ROR--2015--SPRING/tree/master/Assignments)
+    * [X] [Notes](https://github.com/TheIronYard--Orlando/ROR--2015--SPRING/tree/master/Notes)
 * [ ] [Install Homebrew](http://brew.sh) on your Mac
     * [ ] Open `Terminal.app`
     * [ ] [Install Homebrew and the `brew` command](http://brew.sh/#install)
