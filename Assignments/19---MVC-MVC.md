@@ -14,6 +14,17 @@ The functionality should follow the [spec](https://github.com/tastejs/todomvc/bl
 
 You can make use of the HTML in their [template](https://github.com/tastejs/todomvc-app-template/blob/master/index.html) and the CSS in the [template for that](https://github.com/tastejs/todomvc-app-css/blob/master/index.css). Use Rails helper methods wherever possible (in the form, for example).
 
+## Update 
+You can also remove some lines from the HTML template. Towards the bottom are two lines that start
+```
+<script src=
+```
+-they won't break anything other than causing lots of complaining in the log file. Likewise there's a line towards the top of the template that starts
+```
+<link rel="stylesheet" href="node_modules/
+```
+which won't break anything other than causing lots of complaints in the log file.
+
 This project will have multiple levels of difficulty. 
 
 * Level 1: Complete the functionality described above.
