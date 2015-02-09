@@ -10,6 +10,9 @@ Take that introduction, and what you know about Ruby, and make a new Rails app t
 
 Javascript is an increasingly powerful and ubiquitous language that can be used in many different circumstances and blah, blah, blah. We're going to use it in the context for which it was originally intended: working in the browser, to do things other languages can't. Read over the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction), and type out pages for the first three [examples of using Javascript on a web page](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples). Since those pages don't have any Ruby in them, they can go in the `public/` folder of your new app.
 
+### Bonus Thing To Do
+I just pushed this morning's work to a new repository at http://github.com/TheIronYard--Orlando/rails_todo_mvc.git, and realized that we didn't get the "Mark all complete" button to work yet. So, that's something you could do.
+
 ## Objectives
 
 ### Learning Objectives
