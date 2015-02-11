@@ -1,4 +1,4 @@
-# 20 -- AJAX, or maybe AYAX
+# 21 -- AJAX, or maybe AYAX
 
 ### It might be a soft 'j'. I'm not sure but apparently you just communicate asynchronously with the server through XMLHttpRequest objects for an extended period of time. It's supposed to be wild.
 
