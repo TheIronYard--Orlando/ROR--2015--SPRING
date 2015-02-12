@@ -1,4 +1,4 @@
-# 20 -- AJAX, or maybe AYAX
+# 21 -- AJAX, or maybe AYAX
 
 ### It might be a soft 'j'. I'm not sure but apparently you just communicate asynchronously with the server through XMLHttpRequest objects for an extended period of time. It's supposed to be wild.
 
@@ -25,7 +25,7 @@ Return to the restaurant review app and make the following changes:
 
 ### Learning Objectives
 
-You will learn a little about Javascript, most of which will be discovering that you already know some things about Javascript because you know some things about Ruby.
+You will learn how to interact with a Rails app without HTML requests, by making changes in view code and in the controller.
 
 ### Deliverables
 
